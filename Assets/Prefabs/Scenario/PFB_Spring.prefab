@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9062678641322162058}
   - component: {fileID: 9062678641322162166}
   - component: {fileID: 9062678641322162167}
-  - component: {fileID: 9062678641322162056}
+  - component: {fileID: 719246170}
   m_Layer: 0
   m_Name: PFB_Spring
   m_TagString: Untagged
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &9062678641322162056
+--- !u!114 &719246170
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,4 +146,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf670e9499b04345a5175a13eee5a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 10
+  m_JumpForce: 5
