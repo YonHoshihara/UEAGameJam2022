@@ -8,11 +8,16 @@ public class LevelController : MonoBehaviour
     private GameObject m_GameOverScreen;
 
     [SerializeField]
+    private GameObject m_WinScreen;
+
+    [SerializeField]
     private Vector3 m_PlayerStartPosition;
 
     public static LevelController m_Instance;
     
     private TimerController m_TimeController;
+
+    private ItemController m_ItemController;
 
     private GameObject m_Player;
 
@@ -34,14 +39,30 @@ public class LevelController : MonoBehaviour
     {
         m_TimeController = GameObject.FindGameObjectWithTag(GameDefines.m_TimerControler).GetComponent<TimerController>();
         m_Player = GameObject.FindGameObjectWithTag(GameDefines.m_PlayerTag);
+        m_ItemController = GameObject.FindGameObjectWithTag(GameDefines.m_ItemControllerTag).GetComponent<ItemController>();
         m_GameOverStatus = false;
         m_TimeController.StartCount();
     }
 
     public void CallGameOver()
     {
-        m_GameOverStatus = true;
-        m_GameOverScreen.SetActive(true);
+       m_GameOverStatus = true;
+       m_TimeController.ResetCount();
+       m_GameOverScreen.SetActive(true); 
+    }
+
+    public void CallWinScreen()
+    {
+        if (m_ItemController.GetScore() > 0)
+        {
+            m_WinScreen.SetActive(true);
+            m_GameOverStatus = true;
+            m_TimeController.ResetCount();
+        }
+        else
+        {
+            CallGameOver();
+        }
     }
 
     public bool GameOverStatus()
@@ -53,7 +74,9 @@ public class LevelController : MonoBehaviour
     {
         m_GameOverStatus = false;
         m_Player.transform.position = m_PlayerStartPosition;
+        //m_ItemController.Res
         m_GameOverScreen.SetActive(false);
+        m_WinScreen.SetActive(false);
         m_TimeController.ResetCount();
         m_TimeController.StartCount();
 

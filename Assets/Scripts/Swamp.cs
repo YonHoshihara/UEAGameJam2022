@@ -13,7 +13,7 @@ public class Swamp : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == GameDefines.m_PlayerTag)
+        if (collision.gameObject.tag == GameDefines.m_PlayerTag && !LevelController.m_Instance.GameOverStatus())
         {
             if (m_PlayerMovement == null)
             {
@@ -28,7 +28,7 @@ public class Swamp : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == GameDefines.m_PlayerTag)
+        if (collision.gameObject.tag == GameDefines.m_PlayerTag && !LevelController.m_Instance.GameOverStatus())
         {
             m_PlayerMovement.SetMovementSpeed(m_PlayeDefaultMovement);
         }

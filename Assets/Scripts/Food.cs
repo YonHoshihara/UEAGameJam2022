@@ -25,7 +25,7 @@ public class Food : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == GameDefines.m_PlayerTag)
+        if (collision.gameObject.tag == GameDefines.m_PlayerTag && !LevelController.m_Instance.GameOverStatus())
         {
             m_ItemControllerClass.AddScore(m_ScoreToAdd);
             StartCoroutine(Destroy());

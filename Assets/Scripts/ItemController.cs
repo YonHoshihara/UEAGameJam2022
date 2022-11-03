@@ -23,8 +23,6 @@ public class ItemController : MonoBehaviour
         m_Score = m_Score + scoreToAdd;
         m_ScoreText.text = "Score: " + m_Score;
     }
-
-
     public int GetScoreStars()
     {
         if (m_Food.Length == 0)
@@ -32,5 +30,16 @@ public class ItemController : MonoBehaviour
             return 3;
         }
         return m_Score;
+    }
+
+    public int GetScore()
+    {
+        return m_Score;
+    }
+
+    public void ResetScore()
+    {
+        m_Score = 0;
+        m_ScoreText.text = "Score: " + m_Score;
     }
 }

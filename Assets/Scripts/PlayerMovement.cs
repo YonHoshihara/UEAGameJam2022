@@ -39,7 +39,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move(Vector3  movement , float speed)
     {
-        transform.position += movement * Time.deltaTime * speed;
+        if (!LevelController.m_Instance.GameOverStatus())
+        {
+            transform.position += movement * Time.deltaTime * speed;
+        }
     }
 
     private void Jump(float jumpforce)
@@ -57,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == GameDefines.m_GroundLayer)
+        if (collision.gameObject.layer == GameDefines.m_GroundLayer && !LevelController.m_Instance.GameOverStatus())
         {
             m_IsJumping = false;
         }
@@ -65,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == GameDefines.m_GroundLayer)
+        if (collision.gameObject.layer == GameDefines.m_GroundLayer && !LevelController.m_Instance.GameOverStatus())
         {
             m_IsJumping = true;
         }
