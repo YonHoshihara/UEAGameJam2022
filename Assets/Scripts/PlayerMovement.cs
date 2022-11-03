@@ -70,6 +70,18 @@ public class PlayerMovement : MonoBehaviour
             m_IsJumping = true;
         }
     }
+
+    public void SetMovementSpeed(float speed)
+    {
+        m_MovementSpeed = speed;
+    }
+
+    public float GetMovementSpeed()
+    {
+        return m_MovementSpeed;
+    }
+
+
     public bool GetIsJumpingStatus()
     {
         return m_IsJumping;

@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameDefines
 {
     public static string m_PlayerTag = "Player";
+    public static string m_ItemControllerTag = "ItemController";
     public static int m_GroundLayer = 6;
     public static KeyCode m_JumpButton = KeyCode.Space;
 
