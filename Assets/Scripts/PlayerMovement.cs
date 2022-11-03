@@ -93,6 +93,7 @@ public class PlayerMovement : MonoBehaviour
         {
             return GameDefines.PlayerDirection.RIGHT;
         }
+
         return GameDefines.PlayerDirection.LEFT;
     }
 }

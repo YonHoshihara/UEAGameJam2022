@@ -17,7 +17,7 @@ public class Spike : MonoBehaviour
     IEnumerator CallGameOver()
     {
         yield return new WaitForSeconds(m_DelayToGameOver);
-        Debug.Log("Game Over");
+        LevelController.m_Instance.CallGameOver();
     }
 
 }
