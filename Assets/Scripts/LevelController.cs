@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 public class LevelController : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class LevelController : MonoBehaviour
     private ItemController m_ItemController;
 
     private GameObject m_Player;
+
 
     private void Awake()
     {
@@ -72,13 +74,7 @@ public class LevelController : MonoBehaviour
 
     public void ResetLevel()
     {
-        m_GameOverStatus = false;
-        m_Player.transform.position = m_PlayerStartPosition;
-        //m_ItemController.Res
-        m_GameOverScreen.SetActive(false);
-        m_WinScreen.SetActive(false);
-        m_TimeController.ResetCount();
-        m_TimeController.StartCount();
 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
