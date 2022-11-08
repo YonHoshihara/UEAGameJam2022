@@ -14,6 +14,9 @@ public class LevelController : MonoBehaviour
     [SerializeField]
     private Vector3 m_PlayerStartPosition;
 
+    [SerializeField]
+    private float m_DelayToCallScreen;
+
     public static LevelController m_Instance;
     
     private TimerController m_TimeController;
@@ -55,6 +58,12 @@ public class LevelController : MonoBehaviour
 
     public void CallWinScreen()
     {
+        StartCoroutine(CallScreen());
+    }
+
+    private IEnumerator CallScreen()
+    {
+        yield return new WaitForSeconds(m_DelayToCallScreen);
         if (m_ItemController.GetScore() > 0)
         {
             m_WinScreen.SetActive(true);
@@ -74,7 +83,6 @@ public class LevelController : MonoBehaviour
 
     public void ResetLevel()
     {
-
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

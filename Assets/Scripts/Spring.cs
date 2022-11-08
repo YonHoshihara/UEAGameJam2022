@@ -7,11 +7,18 @@ public class Spring : MonoBehaviour
 
     [SerializeField]
     private float m_JumpForce;
-    
+
+    [SerializeField]
+    private Animator m_Animator;
+
+    [SerializeField]
+    private string m_TrigerAnimation;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag.Equals(GameDefines.m_PlayerTag) && !LevelController.m_Instance.GameOverStatus())
         {
+            m_Animator.SetTrigger(m_TrigerAnimation);
             collision.gameObject.GetComponent<PlayerMovement>().CallJump(m_JumpForce, ForceMode2D.Impulse);
         }
     }
