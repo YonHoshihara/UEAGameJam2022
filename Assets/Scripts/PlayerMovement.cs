@@ -74,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(GameDefines.m_JumpButton) && !m_IsJumping)
         {
             m_Animator.SetTrigger("Jump");
+            SoundController.Instance.PlaySound(5);
             m_Animator.SetBool("Move", false);
             transform.rotation = Quaternion.Euler(0, 0, 0);
             CallJump(jumpforce, ForceMode2D.Impulse);
