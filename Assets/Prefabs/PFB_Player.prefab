@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4512137688454984160}
   - component: {fileID: 1955442848}
   - component: {fileID: 3013391208670968474}
+  - component: {fileID: 834066676}
   m_Layer: 0
   m_Name: PFB_Player
   m_TagString: Player
@@ -102,6 +103,7 @@ MonoBehaviour:
   m_MovementSpeed: 3
   m_JumpForce: 5
   m_RigidBody: {fileID: 1955442848}
+  m_Animator: {fileID: 834066676}
 --- !u!50 &1955442848
 Rigidbody2D:
   serializedVersion: 4
@@ -204,3 +206,23 @@ PolygonCollider2D:
       - {x: -0.08800001, y: -0.5}
       - {x: -0.064, y: -0.416}
       - {x: -0.060000002, y: -0.48000002}
+--- !u!95 &834066676
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4512137688454984163}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 56dafc8bbbd9f154592d7bf67b9786e0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

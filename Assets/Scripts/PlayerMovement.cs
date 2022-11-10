@@ -12,8 +12,10 @@ public class PlayerMovement : MonoBehaviour
     private float m_JumpForce;
 
     [SerializeField]
-
     private Rigidbody2D m_RigidBody;
+
+    [SerializeField]
+    private Animator m_Animator;
 
     private Vector2 m_MovementVector;
     
@@ -27,9 +29,13 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        m_MovementVector = new Vector2(Input.GetAxis("Horizontal"),0);
+    {     
+        m_MovementVector = new Vector2(Input.GetAxis("Horizontal"), 0);
         Jump(m_JumpForce);
+        if (m_IsJumping)
+        {
+            m_Animator.SetFloat("YVelocity", m_RigidBody.velocity.y);
+        }
     }
 
     void FixedUpdate()
@@ -42,6 +48,24 @@ public class PlayerMovement : MonoBehaviour
         if (!LevelController.m_Instance.GameOverStatus())
         {
             transform.position += movement * Time.deltaTime * speed;
+            
+            if (movement.x == 0 && !m_IsJumping)
+            {
+                m_Animator.SetBool("Move", false);
+                transform.rotation = Quaternion.Euler(0,0,0);
+            }
+            
+            if (movement.x > 0 && !m_IsJumping)
+            {
+                m_Animator.SetBool("Move", true);
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+
+            if (movement.x < 0 && !m_IsJumping)
+            {
+                m_Animator.SetBool("Move", true);
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
         }
     }
 
@@ -49,6 +73,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(GameDefines.m_JumpButton) && !m_IsJumping)
         {
+            m_Animator.SetTrigger("Jump");
+            m_Animator.SetBool("Move", false);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
             CallJump(jumpforce, ForceMode2D.Impulse);
         }
     }
@@ -62,6 +89,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.layer == GameDefines.m_GroundLayer && !LevelController.m_Instance.GameOverStatus())
         {
+            if (m_IsJumping)
+            {
+                m_Animator.SetTrigger("Land");
+            }
             m_IsJumping = false;
         }
     }
