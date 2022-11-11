@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2781987359423784822}
   - component: {fileID: 9062678641339706477}
   - component: {fileID: 388950374061495276}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PFB_FallingPlatform
   m_TagString: FallingPlatform
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ TargetJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_Anchor: {x: 0, y: 0}
-  m_Target: {x: -0.96, y: -0.15}
+  m_Target: {x: 3.67, y: 0.15}
   m_AutoConfigureTarget: 1
   m_MaxForce: 10000
   m_DampingRatio: 1
