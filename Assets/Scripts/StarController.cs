@@ -22,7 +22,6 @@ public class StarController : MonoBehaviour
     }
     private void EnableStars(int foodCount)
     {
-        Debug.Log(foodCount);
         if (foodCount == 0)
         {
             m_Starts[0].SetActive(true);

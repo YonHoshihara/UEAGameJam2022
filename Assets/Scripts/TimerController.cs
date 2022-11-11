@@ -18,7 +18,7 @@ public class TimerController : MonoBehaviour
     void Start()
     {
         m_Time = m_LevelTime;
-        m_StartCount = false;
+        m_TimeText = GameObject.FindGameObjectWithTag(GameDefines.m_TimeTextTag).GetComponent<TMP_Text>();
         m_TimeText.text = m_Time.ToString();
     }
    
@@ -30,7 +30,6 @@ public class TimerController : MonoBehaviour
             m_Time -= Time.deltaTime;
             m_IntTime = (int)m_Time;
             m_TimeText.text = m_IntTime.ToString();
-
             if (m_Time <= 0)
             {
                 m_StartCount = false;

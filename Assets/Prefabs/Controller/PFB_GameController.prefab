@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GameOverScreen: {fileID: 0}
   m_WinScreen: {fileID: 0}
-  m_PlayerStartPosition: {x: -8.249, y: -3.486, z: 0}
+  m_DelayToCallScreen: 0

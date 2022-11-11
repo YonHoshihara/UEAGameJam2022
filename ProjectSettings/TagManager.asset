@@ -9,6 +9,10 @@ TagManager:
   - TimerController
   - Food
   - Bounds
+  - TimeText
+  - ScoreText
+  - GameOverScreen
+  - WinScreen
   layers:
   - Default
   - TransparentFX

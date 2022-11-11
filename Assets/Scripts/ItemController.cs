@@ -15,6 +15,7 @@ public class ItemController : MonoBehaviour
     private void Start()
     {
         m_Food = GameObject.FindGameObjectsWithTag(GameDefines.m_FoodTag);
+        m_ScoreText = GameObject.FindGameObjectWithTag(GameDefines.m_ScoreTextTag).GetComponent<TMP_Text>();
         m_FoodLenght = m_Food.Length;
     }
 

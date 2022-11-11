@@ -552,6 +552,7 @@ GameObject:
   - component: {fileID: 590647286}
   - component: {fileID: 590647285}
   - component: {fileID: 590647284}
+  - component: {fileID: 2953334188208566753}
   m_Layer: 5
   m_Name: Restart
   m_TagString: Untagged
@@ -662,9 +663,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LevelController, Assembly-CSharp
-        m_MethodName: ResetLevel
+      - m_Target: {fileID: 2953334188208566753}
+        m_TargetAssemblyTypeName: LoadSceneButton, Assembly-CSharp
+        m_MethodName: RelaodScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -674,6 +675,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2953334188208566753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590647282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4b3f3ea4d2cb3f4190467d72b9748ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneToLoad: 
+  m_SceneIndexToLoad: 0
 --- !u!1 &784616475
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,6 +836,7 @@ GameObject:
   - component: {fileID: 838545583}
   - component: {fileID: 838545582}
   - component: {fileID: 838545581}
+  - component: {fileID: 184735544499903272}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -931,6 +947,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &184735544499903272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838545579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4b3f3ea4d2cb3f4190467d72b9748ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneToLoad: 
+  m_SceneIndexToLoad: 0
 --- !u!1 &1156460973
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,6 +973,7 @@ GameObject:
   - component: {fileID: 1156460977}
   - component: {fileID: 1156460976}
   - component: {fileID: 1156460975}
+  - component: {fileID: 2175379889758972828}
   m_Layer: 5
   m_Name: Restart
   m_TagString: Untagged
@@ -1053,9 +1084,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LevelController, Assembly-CSharp
-        m_MethodName: ResetLevel
+      - m_Target: {fileID: 2175379889758972828}
+        m_TargetAssemblyTypeName: LoadSceneButton, Assembly-CSharp
+        m_MethodName: RelaodScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1065,6 +1096,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2175379889758972828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156460973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4b3f3ea4d2cb3f4190467d72b9748ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneToLoad: 
+  m_SceneIndexToLoad: 0
 --- !u!1 &1162766433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,7 +1123,7 @@ GameObject:
   - component: {fileID: 1162766435}
   m_Layer: 5
   m_Name: WinScreen
-  m_TagString: Untagged
+  m_TagString: WinScreen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1158,6 +1203,7 @@ GameObject:
   - component: {fileID: 1655089936}
   - component: {fileID: 1655089935}
   - component: {fileID: 1655089934}
+  - component: {fileID: 6417329839423950967}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -1268,6 +1314,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6417329839423950967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655089932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4b3f3ea4d2cb3f4190467d72b9748ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneToLoad: 
+  m_SceneIndexToLoad: 0
 --- !u!1 &1742745482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1416,7 +1476,7 @@ GameObject:
   - component: {fileID: 1933049834}
   m_Layer: 5
   m_Name: GameOver
-  m_TagString: Untagged
+  m_TagString: GameOverScreen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1707,6 +1767,7 @@ GameObject:
   - component: {fileID: 5897307626383379111}
   - component: {fileID: 3953169751033384077}
   - component: {fileID: 8180642214471752677}
+  - component: {fileID: 5514104243668404618}
   m_Layer: 5
   m_Name: Next
   m_TagString: Untagged
@@ -1817,9 +1878,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LevelController, Assembly-CSharp
-        m_MethodName: ResetLevel
+      - m_Target: {fileID: 5514104243668404618}
+        m_TargetAssemblyTypeName: LoadSceneButton, Assembly-CSharp
+        m_MethodName: LoadSceneByName
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1829,6 +1890,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5514104243668404618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2395041284124136786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4b3f3ea4d2cb3f4190467d72b9748ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneToLoad: Scene_2
+  m_SceneIndexToLoad: 0
 --- !u!1 &3892688690342401390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1842,7 +1917,7 @@ GameObject:
   - component: {fileID: 7771816297240264062}
   m_Layer: 5
   m_Name: Score
-  m_TagString: Untagged
+  m_TagString: ScoreText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2209,7 +2284,7 @@ GameObject:
   - component: {fileID: 6898564059085057276}
   m_Layer: 5
   m_Name: Time
-  m_TagString: Untagged
+  m_TagString: TimeText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

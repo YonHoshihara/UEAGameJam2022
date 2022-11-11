@@ -12,9 +12,6 @@ public class LevelController : MonoBehaviour
     private GameObject m_WinScreen;
 
     [SerializeField]
-    private Vector3 m_PlayerStartPosition;
-
-    [SerializeField]
     private float m_DelayToCallScreen;
 
     public static LevelController m_Instance;
@@ -22,9 +19,6 @@ public class LevelController : MonoBehaviour
     private TimerController m_TimeController;
 
     private ItemController m_ItemController;
-
-    private GameObject m_Player;
-
 
     private void Awake()
     {
@@ -43,7 +37,6 @@ public class LevelController : MonoBehaviour
     private void Start()
     {
         m_TimeController = GameObject.FindGameObjectWithTag(GameDefines.m_TimerControler).GetComponent<TimerController>();
-        m_Player = GameObject.FindGameObjectWithTag(GameDefines.m_PlayerTag);
         m_ItemController = GameObject.FindGameObjectWithTag(GameDefines.m_ItemControllerTag).GetComponent<ItemController>();
         m_GameOverStatus = false;
         m_TimeController.StartCount();

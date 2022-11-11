@@ -92,7 +92,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (m_IsJumping)
             {
-                m_Animator.SetTrigger("Land");
+                m_Animator.SetBool("Land", true);
             }
             m_IsJumping = false;
         }
@@ -102,6 +102,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.layer == GameDefines.m_GroundLayer && !LevelController.m_Instance.GameOverStatus())
         {
+            m_Animator.SetBool("Land", false);
             m_IsJumping = true;
         }
     }
