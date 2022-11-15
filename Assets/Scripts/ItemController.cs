@@ -22,7 +22,7 @@ public class ItemController : MonoBehaviour
     public void AddScore(int scoreToAdd)
     {
         m_Score = m_Score + scoreToAdd;
-        m_ScoreText.text = "Score: " + m_Score;
+        m_ScoreText.text = m_Score.ToString();
     }
     public int GetScoreStars()
     {

@@ -12,7 +12,17 @@ public class LoadSceneButton : MonoBehaviour
     [SerializeField]
     private int m_SceneIndexToLoad;
 
+    private string m_SceneName;
 
+    private int m_SceneIndex;
+    
+    private void Start()
+    {
+        m_SceneName = SceneManager.GetActiveScene().name;
+        m_SceneIndex = SceneManager.GetActiveScene().buildIndex;
+        CheckNextScene();
+    }
+    
     public void LoadSceneByName()
     {
         SoundController.Instance.PlaySound(4);
@@ -29,5 +39,13 @@ public class LoadSceneButton : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         SoundController.Instance.PlaySound(4);
+    }
+
+    private void CheckNextScene()
+    {
+        if (m_SceneName.Contains("Stage"))
+        {
+            m_SceneIndexToLoad = m_SceneIndex + 1;
+        }
     }
 }

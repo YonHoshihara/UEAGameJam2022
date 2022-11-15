@@ -2406,10 +2406,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5514104243668404618, guid: e365f4425ff6a774ba7c0fc1cde773ec, type: 3}
-      propertyPath: m_SceneToLoad
-      value: Stage_2
-      objectReference: {fileID: 0}
     - target: {fileID: 6898564058555247747, guid: e365f4425ff6a774ba7c0fc1cde773ec, type: 3}
       propertyPath: m_Name
       value: PFB_BaseCanvas
