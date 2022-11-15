@@ -14,6 +14,8 @@ public class LevelController : MonoBehaviour
     [SerializeField]
     private float m_DelayToCallScreen;
 
+    private GameObject m_Player;
+
     public static LevelController m_Instance;
     
     private TimerController m_TimeController;
@@ -38,12 +40,14 @@ public class LevelController : MonoBehaviour
     {
         m_TimeController = GameObject.FindGameObjectWithTag(GameDefines.m_TimerControler).GetComponent<TimerController>();
         m_ItemController = GameObject.FindGameObjectWithTag(GameDefines.m_ItemControllerTag).GetComponent<ItemController>();
+        m_Player = GameObject.FindGameObjectWithTag(GameDefines.m_PlayerTag);
         m_GameOverStatus = false;
         m_TimeController.StartCount();
     }
 
     public void CallGameOver()
     {
+       m_Player.SetActive(false);
        m_GameOverStatus = true;
        m_TimeController.ResetCount();
        m_GameOverScreen.SetActive(true); 
@@ -51,6 +55,7 @@ public class LevelController : MonoBehaviour
 
     public void CallWinScreen()
     {
+        m_Player.SetActive(false);
         StartCoroutine(CallScreen());
     }
 
