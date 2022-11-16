@@ -6,10 +6,10 @@ using TMPro;
 public class LevelController : MonoBehaviour
 {
     [SerializeField]
-    private GameObject m_GameOverScreen;
+    private Animator m_GameOverScreen;
 
     [SerializeField]
-    private GameObject m_WinScreen;
+    private Animator m_WinScreen;
 
     [SerializeField]
     private float m_DelayToCallScreen;
@@ -50,7 +50,8 @@ public class LevelController : MonoBehaviour
        m_Player.SetActive(false);
        m_GameOverStatus = true;
        m_TimeController.ResetCount();
-       m_GameOverScreen.SetActive(true); 
+       m_GameOverScreen.gameObject.SetActive(true); 
+       m_GameOverScreen.SetTrigger("Enable");
     }
 
     public void CallWinScreen()
@@ -64,7 +65,8 @@ public class LevelController : MonoBehaviour
         yield return new WaitForSeconds(m_DelayToCallScreen);
         if (m_ItemController.GetScore() > 0)
         {
-            m_WinScreen.SetActive(true);
+            m_WinScreen.gameObject.SetActive(true);
+            m_WinScreen.SetTrigger("Enable");
             m_GameOverStatus = true;
             m_TimeController.ResetCount();
         }

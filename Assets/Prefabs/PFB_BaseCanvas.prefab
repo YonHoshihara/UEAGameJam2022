@@ -579,6 +579,7 @@ GameObject:
   - component: {fileID: 1933049833}
   - component: {fileID: 1933049835}
   - component: {fileID: 1933049834}
+  - component: {fileID: 2876853653086520472}
   m_Layer: 5
   m_Name: GameOver
   m_TagString: GameOverScreen
@@ -645,6 +646,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &2876853653086520472
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933049832}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 450f8fc89f7106c4ebcae346d5b4c951, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &70064089416231638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1092,6 +1113,7 @@ GameObject:
   - component: {fileID: 6070622081331612728}
   - component: {fileID: 7504843812209459262}
   - component: {fileID: 8966138332870018294}
+  - component: {fileID: 6505160705153303608}
   m_Layer: 5
   m_Name: WinScreen
   m_TagString: WinScreen
@@ -1158,6 +1180,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &6505160705153303608
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971482759171904768}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 450f8fc89f7106c4ebcae346d5b4c951, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2709845697554883119
 GameObject:
   m_ObjectHideFlags: 0
@@ -2787,7 +2829,7 @@ RectTransform:
   m_GameObject: {fileID: 9106298668903008556}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1156460974}
