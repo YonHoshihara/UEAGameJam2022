@@ -38,6 +38,7 @@ public class LevelController : MonoBehaviour
 
     private void Start()
     {
+        PlayerPrefs.SetInt(GameDefines.m_CurrentScenePlayerPref, SceneManager.GetActiveScene().buildIndex);
         m_TimeController = GameObject.FindGameObjectWithTag(GameDefines.m_TimerControler).GetComponent<TimerController>();
         m_ItemController = GameObject.FindGameObjectWithTag(GameDefines.m_ItemControllerTag).GetComponent<ItemController>();
         m_Player = GameObject.FindGameObjectWithTag(GameDefines.m_PlayerTag);

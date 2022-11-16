@@ -53,7 +53,6 @@ public class LoadSceneButton : MonoBehaviour
         if (m_SceneName.Contains("Stage"))
         {
             m_SceneIndexToLoad = m_SceneIndex + 1;
-            PlayerPrefs.SetInt(GameDefines.m_CurrentScenePlayerPref, m_SceneIndexToLoad);
         }
     }
 
