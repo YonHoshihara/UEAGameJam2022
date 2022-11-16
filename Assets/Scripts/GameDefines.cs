@@ -12,6 +12,7 @@ public class GameDefines
     public static string m_ScoreTextTag = "ScoreText";
     public static string m_WinScreenTag = "WinScreen";
     public static string m_LoseScreenTag = "GameOverScreen";
+    public static string m_CurrentScenePlayerPref = "CurrentScene";
     public static int m_GroundLayer = 6;
     public static KeyCode m_JumpButton = KeyCode.Space;
 

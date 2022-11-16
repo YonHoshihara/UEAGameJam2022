@@ -31,8 +31,15 @@ public class LoadSceneButton : MonoBehaviour
 
     public void LoadSceneByCode()
     {
-        SceneManager.LoadScene(m_SceneIndexToLoad);
-        SoundController.Instance.PlaySound(4);
+        if (m_SceneToLoad == "")
+        {
+            SceneManager.LoadScene(m_SceneIndexToLoad);
+            SoundController.Instance.PlaySound(4);
+        }
+        else
+        {
+            LoadSceneByName();
+        }
     }
 
     public void RelaodScene()
@@ -46,6 +53,22 @@ public class LoadSceneButton : MonoBehaviour
         if (m_SceneName.Contains("Stage"))
         {
             m_SceneIndexToLoad = m_SceneIndex + 1;
+            PlayerPrefs.SetInt(GameDefines.m_CurrentScenePlayerPref, m_SceneIndexToLoad);
         }
+    }
+
+    public void LoadSceneToContinueScene()
+    {
+        int currentScene = PlayerPrefs.GetInt(GameDefines.m_CurrentScenePlayerPref, m_SceneIndexToLoad);
+        
+        if (currentScene == 0)
+        {
+           SceneManager.LoadScene("Stage_1");
+        }
+        else
+        {
+            SceneManager.LoadScene(currentScene);
+        }
+
     }
 }
