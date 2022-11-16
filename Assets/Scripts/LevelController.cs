@@ -47,6 +47,7 @@ public class LevelController : MonoBehaviour
 
     public void CallGameOver()
     {
+       SoundController.Instance.PlaySound(8);
        m_Player.SetActive(false);
        m_GameOverStatus = true;
        m_TimeController.ResetCount();
@@ -65,6 +66,7 @@ public class LevelController : MonoBehaviour
         yield return new WaitForSeconds(m_DelayToCallScreen);
         if (m_ItemController.GetScore() > 0)
         {
+            SoundController.Instance.PlaySound(9);
             m_WinScreen.gameObject.SetActive(true);
             m_WinScreen.SetTrigger("Enable");
             m_GameOverStatus = true;
