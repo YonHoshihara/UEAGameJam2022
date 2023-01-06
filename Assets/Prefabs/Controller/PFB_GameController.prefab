@@ -44,6 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e87ca4343d8e24aafccbbb263680c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_GameOverScreen: {fileID: 0}
-  m_WinScreen: {fileID: 0}
   m_DelayToCallScreen: 0

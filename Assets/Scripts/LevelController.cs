@@ -1,16 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
 public class LevelController : MonoBehaviour
 {
-    [SerializeField]
-    private Animator m_GameOverScreen;
-
-    [SerializeField]
-    private Animator m_WinScreen;
-
+    
     [SerializeField]
     private float m_DelayToCallScreen;
 
@@ -52,8 +45,7 @@ public class LevelController : MonoBehaviour
        m_Player.SetActive(false);
        m_GameOverStatus = true;
        m_TimeController.ResetCount();
-       m_GameOverScreen.gameObject.SetActive(true); 
-       m_GameOverScreen.SetTrigger("Enable");
+       EventManager.CallGameOverScreenTrigger();
     }
 
     public void CallWinScreen()
@@ -68,8 +60,7 @@ public class LevelController : MonoBehaviour
         if (m_ItemController.GetScore() > 0)
         {
             SoundController.Instance.PlaySound(9);
-            m_WinScreen.gameObject.SetActive(true);
-            m_WinScreen.SetTrigger("Enable");
+            EventManager.CallWinScreenTrigger();
             m_GameOverStatus = true;
             m_TimeController.ResetCount();
         }
