@@ -11,7 +11,11 @@ public class EventManager : MonoBehaviour
     
     public delegate void CallWinScreen();
 
-    public static event CallGameOverScreen callWinScreen ;
+    public static event CallGameOverScreen callWinScreen;
+    
+    public delegate void CallAddScore(int scoreToAdd);
+
+    public static event CallAddScore callAddScore;
 
     
     #region Triggers
@@ -29,6 +33,14 @@ public class EventManager : MonoBehaviour
         if (callWinScreen != null)
         {
             callWinScreen();
+        }
+    }
+    
+    public static void CallAddScoreTrigger(int scoreToAdd)
+    {
+        if (callAddScore != null)
+        {
+            callAddScore(scoreToAdd);
         }
     }
 

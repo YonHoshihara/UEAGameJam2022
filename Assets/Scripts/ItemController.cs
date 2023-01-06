@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using TMPro;
 
@@ -11,7 +12,12 @@ public class ItemController : MonoBehaviour
     private GameObject[] m_Food;
 
     private int m_FoodLenght;
-    
+
+    private void Awake()
+    {
+        EventManager.callAddScore += AddScore;
+    }
+
     private void Start()
     {
         m_Food = GameObject.FindGameObjectsWithTag(GameDefines.m_FoodTag);
@@ -42,5 +48,10 @@ public class ItemController : MonoBehaviour
     {
         m_Score = 0;
         m_ScoreText.text = "Score: " + m_Score;
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.callAddScore -= AddScore;
     }
 }

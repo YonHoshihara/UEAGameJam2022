@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5156851016596511199}
   - component: {fileID: 7731451291272096971}
+  - component: {fileID: 1896129342}
   m_Layer: 0
   m_Name: PFB_GameController
   m_TagString: Untagged
@@ -45,3 +46,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DelayToCallScreen: 0
+  m_ItemController: {fileID: 1896129342}
+--- !u!114 &1896129342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5156851016596511198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d9d6138d750364c993debf0b4f86a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ScoreText: {fileID: 0}

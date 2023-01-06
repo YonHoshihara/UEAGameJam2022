@@ -13,6 +13,7 @@ public class LevelController : MonoBehaviour
     
     private TimerController m_TimeController;
 
+    [SerializeField]
     private ItemController m_ItemController;
 
     private void Awake()
@@ -33,7 +34,7 @@ public class LevelController : MonoBehaviour
     {
         PlayerPrefs.SetInt(GameDefines.m_CurrentScenePlayerPref, SceneManager.GetActiveScene().buildIndex);
         m_TimeController = GameObject.FindGameObjectWithTag(GameDefines.m_TimerControler).GetComponent<TimerController>();
-        m_ItemController = GameObject.FindGameObjectWithTag(GameDefines.m_ItemControllerTag).GetComponent<ItemController>();
+        //m_ItemController = GameObject.FindGameObjectWithTag(GameDefines.m_ItemControllerTag).GetComponent<ItemController>();
         m_Player = GameObject.FindGameObjectWithTag(GameDefines.m_PlayerTag);
         m_GameOverStatus = false;
         m_TimeController.StartCount();
