@@ -25,7 +25,7 @@ public class LoadSceneButton : MonoBehaviour
     
     public void LoadSceneByName()
     {
-        SoundController.Instance.PlaySound(4);
+        EventManager.PlaySoundTrigger(GameDefines.Sounds.PressButton);
         SceneManager.LoadScene(m_SceneToLoad);
     }
 
@@ -34,7 +34,7 @@ public class LoadSceneButton : MonoBehaviour
         if (m_SceneToLoad == "")
         {
             SceneManager.LoadScene(m_SceneIndexToLoad);
-            SoundController.Instance.PlaySound(4);
+            EventManager.PlaySoundTrigger(GameDefines.Sounds.PressButton);
         }
         else
         {
@@ -45,7 +45,7 @@ public class LoadSceneButton : MonoBehaviour
     public void RelaodScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        SoundController.Instance.PlaySound(4);
+        EventManager.PlaySoundTrigger(GameDefines.Sounds.PressButton);
     }
 
     private void CheckNextScene()

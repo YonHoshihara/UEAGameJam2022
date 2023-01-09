@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting.InputSystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class LevelController : MonoBehaviour
@@ -41,8 +42,8 @@ public class LevelController : MonoBehaviour
 
     public void CallGameOver()
     {
-       SoundController.Instance.PlaySound(8);
-       m_Player.SetActive(false);
+        EventManager.PlaySoundTrigger(GameDefines.Sounds.Lose); 
+        m_Player.SetActive(false);
        m_GameOverStatus = true;
        m_TimeController.ResetCount();
        EventManager.CallGameOverScreenTrigger();
@@ -59,7 +60,7 @@ public class LevelController : MonoBehaviour
         yield return new WaitForSeconds(m_DelayToCallScreen);
         if (m_ItemController.GetScore() > 0)
         {
-            SoundController.Instance.PlaySound(9);
+            EventManager.PlaySoundTrigger(GameDefines.Sounds.Win); 
             EventManager.CallWinScreenTrigger();
             m_GameOverStatus = true;
             m_TimeController.ResetCount();

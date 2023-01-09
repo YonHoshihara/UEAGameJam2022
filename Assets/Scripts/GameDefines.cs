@@ -20,4 +20,9 @@ public class GameDefines
     {
         LEFT,RIGHT
     }
+    
+    public enum Sounds
+    {
+        BoxCrash, EatFood, Jump, MonsterDie, PressButton, Spring, Walk, Water, Lose, Win
+    }
 }

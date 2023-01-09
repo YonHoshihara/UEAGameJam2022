@@ -13,7 +13,7 @@ public class Food : MonoBehaviour
     {
         if (collision.gameObject.tag == GameDefines.m_PlayerTag && !LevelController.m_Instance.GameOverStatus())
         {
-            SoundController.Instance.PlaySound(1);
+            EventManager.PlaySoundTrigger(GameDefines.Sounds.EatFood);
             EventManager.CallAddScoreTrigger(m_ScoreToAdd);
             StartCoroutine(Destroy());
         }

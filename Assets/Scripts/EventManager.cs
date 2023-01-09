@@ -16,6 +16,10 @@ public class EventManager : MonoBehaviour
     public delegate void CallAddScore(int scoreToAdd);
 
     public static event CallAddScore callAddScore;
+    
+    public delegate void PlaySound(GameDefines.Sounds sound);
+
+    public static event PlaySound playSound;
 
     
     #region Triggers
@@ -41,6 +45,14 @@ public class EventManager : MonoBehaviour
         if (callAddScore != null)
         {
             callAddScore(scoreToAdd);
+        }
+    }
+
+    public static void PlaySoundTrigger(GameDefines.Sounds sound)
+    {
+        if (playSound != null)
+        {
+            playSound(sound);
         }
     }
 
