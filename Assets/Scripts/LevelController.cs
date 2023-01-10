@@ -38,6 +38,7 @@ public class LevelController : MonoBehaviour
         m_Player = GameObject.FindGameObjectWithTag(GameDefines.m_PlayerTag);
         m_GameOverStatus = false;
         m_TimeController.StartCount();
+        EventManager.StartMeteorMovementTrigger();
     }
 
     public void CallGameOver()

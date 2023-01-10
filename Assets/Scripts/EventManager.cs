@@ -20,6 +20,10 @@ public class EventManager : MonoBehaviour
     public delegate void PlaySound(GameDefines.Sounds sound);
 
     public static event PlaySound playSound;
+    
+    public delegate void StartMeteorMovement();
+
+    public static event StartMeteorMovement startMeteorMovement;
 
     
     #region Triggers
@@ -53,6 +57,14 @@ public class EventManager : MonoBehaviour
         if (playSound != null)
         {
             playSound(sound);
+        }
+    }
+    
+    public static void StartMeteorMovementTrigger()
+    {
+        if (startMeteorMovement != null)
+        {
+            startMeteorMovement();
         }
     }
 
