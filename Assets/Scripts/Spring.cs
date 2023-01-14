@@ -19,7 +19,9 @@ public class Spring : MonoBehaviour
         if (collision.gameObject.tag.Equals(GameDefines.m_PlayerTag) && !LevelController.m_Instance.GameOverStatus())
         {
             m_Animator.SetTrigger(m_TrigerAnimation);
-            collision.gameObject.GetComponent<PlayerMovement>().CallJump(m_JumpForce, ForceMode2D.Impulse);
+            PlayerMovement playerMovement = collision.gameObject.GetComponent<PlayerMovement>();
+            //playerMovement.SetIsJumpingStatus(false);
+            playerMovement.CallJump(m_JumpForce, ForceMode2D.Impulse);
             EventManager.PlaySoundTrigger(GameDefines.Sounds.Spring);
         }
     }

@@ -13,7 +13,9 @@ public class FallingPlatform : MonoBehaviour
 
     [SerializeField]
     private TargetJoint2D m_TargetJoint;
-    
+
+    [SerializeField] 
+    private BoxCollider2D m_BoxCollider2D;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == GameDefines.m_PlayerTag)
@@ -29,7 +31,7 @@ public class FallingPlatform : MonoBehaviour
     private IEnumerator Fall()
     {
         yield return new WaitForSeconds(m_TimeToFall);
+        m_BoxCollider2D.enabled = false;
         m_TargetJoint.enabled = false;
-      
     }
 }

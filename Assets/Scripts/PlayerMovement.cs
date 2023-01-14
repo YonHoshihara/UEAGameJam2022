@@ -143,6 +143,10 @@ public class PlayerMovement : MonoBehaviour
         return m_IsJumping;
     }
 
+    public void SetIsJumpingStatus(bool isJumpingStatus)
+    {
+        m_IsJumping = isJumpingStatus;
+    }
     public GameDefines.PlayerDirection GetPlayerDirection()
     {
         if (m_RigidBody.velocity.x >= 0)
