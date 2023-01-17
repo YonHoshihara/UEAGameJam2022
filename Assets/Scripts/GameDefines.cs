@@ -13,7 +13,9 @@ public class GameDefines
     public static string m_WinScreenTag = "WinScreen";
     public static string m_LoseScreenTag = "GameOverScreen";
     public static string m_CurrentScenePlayerPref = "CurrentScene";
-    public static int m_GroundLayer = 6;
+    public const int m_GroundLayer = 6;
+    public const int m_LandLayer = 7;
+    
     public static KeyCode m_JumpButton = KeyCode.Space;
 
     public enum PlayerDirection

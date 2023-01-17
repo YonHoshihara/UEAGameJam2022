@@ -71,6 +71,15 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MoveInArrow"",
+                    ""type"": ""Button"",
+                    ""id"": ""54b089bb-53b5-4e39-a0c7-b903ed6d935f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -139,6 +148,39 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""action"": ""RightArrow"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Arrow"",
+                    ""id"": ""2c3ef5e6-0507-48cb-80eb-04bf1ec1081d"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveInArrow"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""eec8b240-e8f3-4508-9771-a41dd2508181"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveInArrow"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""8990cff8-6362-498b-a3e9-4024b17bf12d"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveInArrow"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -152,6 +194,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         m_Gameplay_MoveInStick = m_Gameplay.FindAction("MoveInStick", throwIfNotFound: true);
         m_Gameplay_LeftArrow = m_Gameplay.FindAction("LeftArrow", throwIfNotFound: true);
         m_Gameplay_RightArrow = m_Gameplay.FindAction("RightArrow", throwIfNotFound: true);
+        m_Gameplay_MoveInArrow = m_Gameplay.FindAction("MoveInArrow", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -216,6 +259,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_MoveInStick;
     private readonly InputAction m_Gameplay_LeftArrow;
     private readonly InputAction m_Gameplay_RightArrow;
+    private readonly InputAction m_Gameplay_MoveInArrow;
     public struct GameplayActions
     {
         private @PlayerControlls m_Wrapper;
@@ -225,6 +269,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         public InputAction @MoveInStick => m_Wrapper.m_Gameplay_MoveInStick;
         public InputAction @LeftArrow => m_Wrapper.m_Gameplay_LeftArrow;
         public InputAction @RightArrow => m_Wrapper.m_Gameplay_RightArrow;
+        public InputAction @MoveInArrow => m_Wrapper.m_Gameplay_MoveInArrow;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -249,6 +294,9 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @RightArrow.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRightArrow;
                 @RightArrow.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRightArrow;
                 @RightArrow.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRightArrow;
+                @MoveInArrow.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMoveInArrow;
+                @MoveInArrow.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMoveInArrow;
+                @MoveInArrow.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMoveInArrow;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -268,6 +316,9 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @RightArrow.started += instance.OnRightArrow;
                 @RightArrow.performed += instance.OnRightArrow;
                 @RightArrow.canceled += instance.OnRightArrow;
+                @MoveInArrow.started += instance.OnMoveInArrow;
+                @MoveInArrow.performed += instance.OnMoveInArrow;
+                @MoveInArrow.canceled += instance.OnMoveInArrow;
             }
         }
     }
@@ -279,5 +330,6 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         void OnMoveInStick(InputAction.CallbackContext context);
         void OnLeftArrow(InputAction.CallbackContext context);
         void OnRightArrow(InputAction.CallbackContext context);
+        void OnMoveInArrow(InputAction.CallbackContext context);
     }
 }

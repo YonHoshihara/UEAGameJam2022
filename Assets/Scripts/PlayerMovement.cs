@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     
     private bool m_IsJumping;
 
+    private bool m_Moving;
+
     private PlayerControlls m_Controls;
     // Start is called before the first frame update
     void Awake()
@@ -33,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
         m_Controls.Gameplay.Jump.performed += ctx => JumpListener();
         m_Controls.Gameplay.MoveInPad.performed += ctx => m_MovementVector = new Vector2(ctx.ReadValue<float>(),0);
         m_Controls.Gameplay.MoveInPad.canceled += ctx => m_MovementVector = Vector2.zero;
+        
         m_Controls.Gameplay.LeftArrow.performed += ctx => m_MovementVector = new Vector2(-1,0);
         m_Controls.Gameplay.LeftArrow.canceled += ctx => m_MovementVector = Vector2.zero;
         m_Controls.Gameplay.RightArrow.performed += ctx => m_MovementVector = new Vector2(1,0);
@@ -71,18 +74,21 @@ public class PlayerMovement : MonoBehaviour
             
             if (movement.x == 0 && !m_IsJumping)
             {
+                //Debug.Log("1");
                 m_Animator.SetBool("Move", false);
-                transform.rotation = Quaternion.Euler(0,0,0);
+                //transform.rotation = Quaternion.Euler(0,0,0);
             }
             
             if (movement.x > 0 && !m_IsJumping)
             {
+                //Debug.Log("2");
                 m_Animator.SetBool("Move", true);
                 transform.rotation = Quaternion.Euler(0, 0, 0);
             }
 
             if (movement.x < 0 && !m_IsJumping)
             {
+                //Debug.Log("3");
                 m_Animator.SetBool("Move", true);
                 transform.rotation = Quaternion.Euler(0, 180, 0);
             }
@@ -96,7 +102,6 @@ public class PlayerMovement : MonoBehaviour
             m_Animator.SetTrigger("Jump");
             EventManager.PlaySoundTrigger(GameDefines.Sounds.Jump);
             m_Animator.SetBool("Move", false);
-            transform.rotation = Quaternion.Euler(0, 0, 0);
             CallJump(jumpforce, ForceMode2D.Impulse);
         }
     }
@@ -108,23 +113,41 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == GameDefines.m_GroundLayer && !LevelController.m_Instance.GameOverStatus())
+        if (!LevelController.m_Instance.GameOverStatus())
         {
-            if (m_IsJumping)
+            switch ((int)collision.gameObject.layer)
             {
-                m_Animator.SetBool("Land", true);
+                case GameDefines.m_GroundLayer:
+                    
+                    if (m_IsJumping)
+                    {
+                        m_Animator.SetBool("Land", true);
+                    }
+                    m_IsJumping = false;
+                    
+                    break;
+               case  GameDefines.m_LandLayer:
+                   m_Animator.SetBool("Land", true);
+                   m_IsJumping = false;
+                   break;
             }
-            m_IsJumping = false;
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == GameDefines.m_GroundLayer && !LevelController.m_Instance.GameOverStatus())
+
+        if (!LevelController.m_Instance.GameOverStatus())
         {
-            m_Animator.SetBool("Land", false);
-            m_IsJumping = true;
+            switch ((int)collision.gameObject.layer)
+            {
+                case GameDefines.m_GroundLayer:
+                    m_Animator.SetBool("Land", false);
+                    m_IsJumping = true;
+                    break;
+            }
         }
+        
     }
 
     public void SetMovementSpeed(float speed)
