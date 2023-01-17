@@ -1,31 +1,55 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Geiser : MonoBehaviour
 {
-    [SerializeField]
-    private Animator m_Animator;
-
-    [SerializeField]
-    private string m_TrigerAnimation;
+    private PlayerMovement m_PlayerMovement;
     
-    private void OnCollisionEnter2D(Collision2D collision)
+    [SerializeField] 
+    private GameObject m_GeiserFinalPosition;
+
+    [SerializeField] 
+    private GameObject m_Geiser;
+
+    [SerializeField] 
+    private float m_AnimationTime;
+    
+    [SerializeField] 
+    private float m_DisableGeiserTime;
+    
+    private Vector3 m_GeiserStartPosition;
+    
+    private Hashtable m_Hashtable;
+    private void Start()
     {
-        if (collision.gameObject.tag.Equals(GameDefines.m_PlayerTag) && !LevelController.m_Instance.GameOverStatus())
+        m_GeiserStartPosition = m_Geiser.transform.position;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag.Equals(GameDefines.m_PlayerTag) && !LevelController.m_Instance.GameOverStatus())
         {
-            m_Animator.SetTrigger(m_TrigerAnimation);
-            collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-           
+            other.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            iTween.MoveTo(m_Geiser, iTween.Hash(
+                "position", m_GeiserFinalPosition.transform.position,
+                "speed", m_AnimationTime,
+                "oncompletetarget", gameObject,
+                "oncomplete", "ResetGeiser"));
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private IEnumerator BackToStartPosition()
     {
-        if (collision.gameObject.tag.Equals(GameDefines.m_PlayerTag) && !LevelController.m_Instance.GameOverStatus())
-        {
-            m_Animator.SetTrigger(m_TrigerAnimation);
+        yield return new WaitForSeconds(m_DisableGeiserTime);
+        iTween.MoveTo(m_Geiser, m_GeiserStartPosition, m_AnimationTime);
+    }
 
-        }
+    void ResetGeiser()
+    {
+        Debug.Log("CallBack");
+        StartCoroutine(BackToStartPosition());
     }
 }

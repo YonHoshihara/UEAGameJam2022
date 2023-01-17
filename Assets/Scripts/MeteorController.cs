@@ -22,7 +22,6 @@ public class MeteorController : MonoBehaviour
         m_Hashtable = new Hashtable();
         m_Hashtable.Add("position", m_EndDistance);
         m_Hashtable.Add("speed", m_Time);
-        
     }
     
     public void MoveMeteor()
