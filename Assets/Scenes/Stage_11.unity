@@ -2622,7 +2622,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6286681648665496996, guid: 2fc8b0b8180684745939c8aeeaad11ae, type: 3}
       propertyPath: m_LevelTime
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7731451291272096971, guid: 2fc8b0b8180684745939c8aeeaad11ae, type: 3}
       propertyPath: m_WinScreen
