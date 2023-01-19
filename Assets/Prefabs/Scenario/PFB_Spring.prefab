@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf670e9499b04345a5175a13eee5a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 12
+  m_JumpForce: 24
   m_Animator: {fileID: 1227488167}
   m_TrigerAnimation: Active
 --- !u!60 &1227488166

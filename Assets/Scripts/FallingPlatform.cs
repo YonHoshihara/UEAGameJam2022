@@ -24,8 +24,18 @@ public class FallingPlatform : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            if (collision.gameObject.layer == GameDefines.m_GroundLayer)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                m_BoxCollider2D.enabled = false;
+                m_TargetJoint.enabled = false;
+            }
         }
+
+       
     }
 
     private IEnumerator Fall()

@@ -49,7 +49,6 @@ public class Geiser : MonoBehaviour
 
     void ResetGeiser()
     {
-        Debug.Log("CallBack");
         StartCoroutine(BackToStartPosition());
     }
 }
