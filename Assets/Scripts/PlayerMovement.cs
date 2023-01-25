@@ -36,10 +36,9 @@ public class PlayerMovement : MonoBehaviour
         m_Controls.Gameplay.MoveInPad.performed += ctx => m_MovementVector = new Vector2(ctx.ReadValue<float>(),0);
         m_Controls.Gameplay.MoveInPad.canceled += ctx => m_MovementVector = Vector2.zero;
         
-        m_Controls.Gameplay.LeftArrow.performed += ctx => m_MovementVector = new Vector2(-1,0);
-        m_Controls.Gameplay.LeftArrow.canceled += ctx => m_MovementVector = Vector2.zero;
-        m_Controls.Gameplay.RightArrow.performed += ctx => m_MovementVector = new Vector2(1,0);
-        m_Controls.Gameplay.RightArrow.canceled += ctx => m_MovementVector = Vector2.zero;
+        m_Controls.Gameplay.MoveInArrow.performed += ctx => m_MovementVector = ctx.ReadValue<Vector2>();
+        m_Controls.Gameplay.MoveInArrow.canceled += ctx => m_MovementVector = Vector2.zero;
+        
     }
 
     private void OnEnable()

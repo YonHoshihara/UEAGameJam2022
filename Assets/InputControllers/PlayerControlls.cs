@@ -74,12 +74,12 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""MoveInArrow"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""54b089bb-53b5-4e39-a0c7-b903ed6d935f"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -150,9 +150,9 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""Arrow"",
-                    ""id"": ""2c3ef5e6-0507-48cb-80eb-04bf1ec1081d"",
-                    ""path"": ""1DAxis"",
+                    ""name"": ""WASD"",
+                    ""id"": ""fc14f73a-dcb1-4074-be5a-6db5829a87d4"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -161,9 +161,9 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
-                    ""id"": ""eec8b240-e8f3-4508-9771-a41dd2508181"",
-                    ""path"": """",
+                    ""name"": ""left"",
+                    ""id"": ""d803a24d-5d63-4a58-b686-f4f722f58d6d"",
+                    ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -172,9 +172,9 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""positive"",
-                    ""id"": ""8990cff8-6362-498b-a3e9-4024b17bf12d"",
-                    ""path"": """",
+                    ""name"": ""right"",
+                    ""id"": ""1d8fbca6-676d-40e0-bb38-703adaccc741"",
+                    ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
