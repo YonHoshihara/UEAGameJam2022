@@ -73,21 +73,17 @@ public class PlayerMovement : MonoBehaviour
             
             if (movement.x == 0 && !m_IsJumping)
             {
-                //Debug.Log("1");
                 m_Animator.SetBool("Move", false);
-                //transform.rotation = Quaternion.Euler(0,0,0);
             }
             
             if (movement.x > 0 && !m_IsJumping)
             {
-                //Debug.Log("2");
                 m_Animator.SetBool("Move", true);
                 transform.rotation = Quaternion.Euler(0, 0, 0);
             }
 
             if (movement.x < 0 && !m_IsJumping)
             {
-                //Debug.Log("3");
                 m_Animator.SetBool("Move", true);
                 transform.rotation = Quaternion.Euler(0, 180, 0);
             }
@@ -97,11 +93,13 @@ public class PlayerMovement : MonoBehaviour
     private void Jump(float jumpforce)
     {
         if (!m_IsJumping)
-        {
+        {   
+            m_IsJumping = true;
             m_Animator.SetTrigger("Jump");
             EventManager.PlaySoundTrigger(GameDefines.Sounds.Jump);
             m_Animator.SetBool("Move", false);
             CallJump(jumpforce, ForceMode2D.Impulse);
+            m_Animator.SetBool("Land", false);
         }
     }
     
@@ -132,23 +130,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-
-        if (!LevelController.m_Instance.GameOverStatus())
-        {
-            switch ((int)collision.gameObject.layer)
-            {
-                case GameDefines.m_GroundLayer:
-                    m_Animator.SetBool("Land", false);
-                    m_IsJumping = true;
-                    break;
-            }
-        }
-        
-    }
-
+    
     public void SetMovementSpeed(float speed)
     {
         m_MovementSpeed = speed;

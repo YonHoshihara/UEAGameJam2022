@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 176752040}
   - component: {fileID: 2041367412}
   - component: {fileID: 2041367411}
+  - component: {fileID: 4500778891928773129}
   m_Layer: 6
   m_Name: WaterTop
   m_TagString: Untagged
@@ -98,7 +99,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 176752038}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -108,7 +109,7 @@ Rigidbody2D:
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 2
   m_CollisionDetection: 0
   m_Constraints: 7
 --- !u!61 &2041367411
@@ -137,6 +138,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8812413, y: 0.12695122}
   m_EdgeRadius: 0.1
+--- !u!114 &4500778891928773129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176752038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e4dbafac178ebe46b14ab2ff88f4c8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &506784729
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,7 +618,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03992462, y: 0.13610041}
+  m_Offset: {x: 0.024678707, y: 0.13610041}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -616,7 +629,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.75779533, y: 0.13116217}
+  m_Size: {x: 0.16861153, y: 0.13116217}
   m_EdgeRadius: 0
 --- !u!114 &396732750
 MonoBehaviour:
@@ -633,4 +646,6 @@ MonoBehaviour:
   m_GeiserFinalPosition: {fileID: 456636064926053430}
   m_Geiser: {fileID: 176752038}
   m_AnimationTime: 2
+  m_DelayGaiserAnimation: 0
   m_DisableGeiserTime: 1
+  m_GeiserPlatformCollider: {fileID: 2041367411}
