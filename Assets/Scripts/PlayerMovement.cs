@@ -14,12 +14,18 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float m_JumpForce;
 
+    [SerializeField] 
+    private float m_GroundCheckRadios;
+
     [SerializeField]
     private Rigidbody2D m_RigidBody;
-
+    
     [SerializeField]
     private Animator m_Animator;
-
+    
+    [SerializeField]
+    private LayerMask m_GroundLayer;
+    
     private Vector2 m_MovementVector;
     
     private bool m_IsJumping;
@@ -63,7 +69,9 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         Move(m_MovementVector,m_MovementSpeed);
+        GroundCheck();
     }
+    
     
     private void Move(Vector3  movement , float speed)
     {
@@ -93,8 +101,7 @@ public class PlayerMovement : MonoBehaviour
     private void Jump(float jumpforce)
     {
         if (!m_IsJumping)
-        {   
-            m_IsJumping = true;
+        {
             m_Animator.SetTrigger("Jump");
             EventManager.PlaySoundTrigger(GameDefines.Sounds.Jump);
             m_Animator.SetBool("Move", false);
@@ -107,29 +114,7 @@ public class PlayerMovement : MonoBehaviour
     {
         m_RigidBody.AddForce(new Vector2(0, jumpforce), forcemode);
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (!LevelController.m_Instance.GameOverStatus())
-        {
-            switch ((int)collision.gameObject.layer)
-            {
-                case GameDefines.m_GroundLayer:
-                    
-                    if (m_IsJumping)
-                    {
-                        m_Animator.SetBool("Land", true);
-                    }
-                    m_IsJumping = false;
-                    
-                    break;
-               case  GameDefines.m_LandLayer:
-                   m_Animator.SetBool("Land", true);
-                   m_IsJumping = false;
-                   break;
-            }
-        }
-    }
+    
     
     public void SetMovementSpeed(float speed)
     {
@@ -161,6 +146,28 @@ public class PlayerMovement : MonoBehaviour
         return GameDefines.PlayerDirection.LEFT;
     }
 
+    private void GroundCheck()
+    {
+
+        RaycastHit2D hit  = Physics2D.Raycast(gameObject.transform.position, Vector2.down, m_GroundCheckRadios, m_GroundLayer);
+        Debug.DrawRay(gameObject.transform.position, Vector2.down * m_GroundCheckRadios);
+        if (hit.collider != null)
+        {
+            if (m_IsJumping)
+            {
+                m_Animator.SetBool("Land", true);
+            }
+
+            m_IsJumping = false;
+        }
+        else
+        {
+            m_IsJumping = true;
+        }
+        
+
+    }
+    
 
     #region InputListeners
 

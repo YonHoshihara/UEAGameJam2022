@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FallingPlatform : MonoBehaviour
@@ -16,26 +18,34 @@ public class FallingPlatform : MonoBehaviour
 
     [SerializeField] 
     private BoxCollider2D m_BoxCollider2D;
+
+    private void Update()
+    {
+        if (gameObject.transform.position.y < -30)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        
+        if (collision.gameObject.tag == "BottomBound")
+        {
+            Destroy(gameObject);
+        }
+        
         if (collision.gameObject.tag == GameDefines.m_PlayerTag)
         {
             StartCoroutine(Fall());
         }
         else
         {
-            if (collision.gameObject.layer == GameDefines.m_GroundLayer)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
-                m_BoxCollider2D.enabled = false;
-                m_TargetJoint.enabled = false;
-            }
+            m_BoxCollider2D.enabled = false;
+            m_TargetJoint.enabled = false;
         }
-
-       
+        
+        
     }
 
     private IEnumerator Fall()

@@ -195,8 +195,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1167757477
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.012000024, y: 0.012000024, z: 0}
@@ -773,7 +773,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9062678641339706477, guid: 5216681640c2e4948bea05f9705f5959, type: 3}
       propertyPath: m_Target.y
-      value: -0.562
+      value: -1.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5216681640c2e4948bea05f9705f5959, type: 3}
@@ -1120,7 +1120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9062678641339706477, guid: 5216681640c2e4948bea05f9705f5959, type: 3}
       propertyPath: m_Target.y
-      value: -1.05
+      value: -2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5216681640c2e4948bea05f9705f5959, type: 3}
@@ -1652,7 +1652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9062678641339706477, guid: 5216681640c2e4948bea05f9705f5959, type: 3}
       propertyPath: m_Target.y
-      value: 0.36372185
+      value: -0.074
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5216681640c2e4948bea05f9705f5959, type: 3}
@@ -1898,7 +1898,7 @@ GameObject:
   - component: {fileID: 1187317286}
   m_Layer: 0
   m_Name: Botton
-  m_TagString: Bounds
+  m_TagString: BottomBound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2386,11 +2386,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9062678641339706477, guid: 5216681640c2e4948bea05f9705f5959, type: 3}
       propertyPath: m_Target.x
-      value: -2.983918
+      value: -2.6158009
       objectReference: {fileID: 0}
     - target: {fileID: 9062678641339706477, guid: 5216681640c2e4948bea05f9705f5959, type: 3}
       propertyPath: m_Target.y
-      value: -2.315
+      value: 0.858
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5216681640c2e4948bea05f9705f5959, type: 3}
@@ -2606,10 +2606,6 @@ PrefabInstance:
     - target: {fileID: 5156851016596511199, guid: 2fc8b0b8180684745939c8aeeaad11ae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6286681648665496996, guid: 2fc8b0b8180684745939c8aeeaad11ae, type: 3}
-      propertyPath: m_LevelTime
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7731451291272096971, guid: 2fc8b0b8180684745939c8aeeaad11ae, type: 3}
       propertyPath: m_WinScreen
