@@ -2332,6 +2332,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4512137688454984160, guid: 0284853f9f12411448ae488d49607751, type: 3}
+      propertyPath: m_MaxGroundColliderPosition
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4512137688454984160, guid: 0284853f9f12411448ae488d49607751, type: 3}
+      propertyPath: m_MinGroundColliderPosition
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4512137688454984161, guid: 0284853f9f12411448ae488d49607751, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -2684,10 +2692,6 @@ PrefabInstance:
     - target: {fileID: 5156851016596511199, guid: 2fc8b0b8180684745939c8aeeaad11ae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6286681648665496996, guid: 2fc8b0b8180684745939c8aeeaad11ae, type: 3}
-      propertyPath: m_LevelTime
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7731451291272096971, guid: 2fc8b0b8180684745939c8aeeaad11ae, type: 3}
       propertyPath: m_WinScreen

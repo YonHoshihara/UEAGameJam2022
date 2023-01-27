@@ -22,6 +22,12 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField]
     private Animator m_Animator;
+
+    [SerializeField] 
+    private float m_MinGroundColliderPosition;
+    
+    [SerializeField] 
+    private float m_MaxGroundColliderPosition;
     
     [SerializeField]
     private LayerMask m_GroundLayer;
@@ -148,10 +154,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void GroundCheck()
     {
-
-        RaycastHit2D hit  = Physics2D.Raycast(gameObject.transform.position, Vector2.down, m_GroundCheckRadios, m_GroundLayer);
-        Debug.DrawRay(gameObject.transform.position, Vector2.down * m_GroundCheckRadios);
-        if (hit.collider != null)
+        
+        Vector2 hitorigin_1 = new Vector2(gameObject.transform.position.x + m_MinGroundColliderPosition, gameObject.transform.position.y);
+        Vector2 hitorigin_2 = new Vector2(gameObject.transform.position.x - m_MaxGroundColliderPosition, gameObject.transform.position.y);
+        
+        RaycastHit2D hit_1  = Physics2D.Raycast(hitorigin_1, Vector2.down, m_GroundCheckRadios, m_GroundLayer);
+        RaycastHit2D hit_2  = Physics2D.Raycast(hitorigin_2, Vector2.down, m_GroundCheckRadios, m_GroundLayer);
+        
+        Debug.DrawRay(hitorigin_1, Vector2.down * m_GroundCheckRadios);
+        Debug.DrawRay(hitorigin_2, Vector2.down * m_GroundCheckRadios);
+        
+        if (hit_1.collider != null && hit_2.collider != null)
         {
             if (m_IsJumping)
             {
@@ -165,7 +178,6 @@ public class PlayerMovement : MonoBehaviour
             m_IsJumping = true;
         }
         
-
     }
 
     private void OnCollisionEnter2D(Collision2D col)
