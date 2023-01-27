@@ -20,7 +20,7 @@ public class Spring : MonoBehaviour
         {
             m_Animator.SetTrigger(m_TrigerAnimation);
             PlayerMovement playerMovement = collision.gameObject.GetComponent<PlayerMovement>();
-            playerMovement.CallJump(m_JumpForce, ForceMode2D.Impulse);
+            playerMovement.CallsSpringJump(m_JumpForce);
             EventManager.PlaySoundTrigger(GameDefines.Sounds.Spring);
         }
     }

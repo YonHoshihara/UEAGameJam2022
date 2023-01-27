@@ -120,7 +120,14 @@ public class PlayerMovement : MonoBehaviour
     {
         m_RigidBody.AddForce(new Vector2(0, jumpforce), forcemode);
     }
-    
+
+    public void CallsSpringJump(float jumpforce)
+    { m_Animator.SetTrigger("Jump");
+        EventManager.PlaySoundTrigger(GameDefines.Sounds.Jump);
+        m_Animator.SetBool("Move", false);
+        CallJump(jumpforce, ForceMode2D.Impulse);
+        m_Animator.SetBool("Land", false);
+    }
     
     public void SetMovementSpeed(float speed)
     {
@@ -164,7 +171,7 @@ public class PlayerMovement : MonoBehaviour
         Debug.DrawRay(hitorigin_1, Vector2.down * m_GroundCheckRadios);
         Debug.DrawRay(hitorigin_2, Vector2.down * m_GroundCheckRadios);
         
-        if (hit_1.collider != null && hit_2.collider != null)
+        if (hit_1.collider != null || hit_2.collider != null)
         {
             if (m_IsJumping)
             {

@@ -102,9 +102,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MovementSpeed: 3
   m_JumpForce: 10
-  m_GroundCheckRadios: 0.6
+  m_GroundCheckRadios: 0.58
   m_RigidBody: {fileID: 1955442848}
   m_Animator: {fileID: 834066676}
+  m_MinGroundColliderPosition: 0.1
+  m_MaxGroundColliderPosition: 0.4
   m_GroundLayer:
     serializedVersion: 2
     m_Bits: 64
