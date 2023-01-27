@@ -167,7 +167,15 @@ public class PlayerMovement : MonoBehaviour
         
 
     }
-    
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "BottomBound")
+        {
+            LevelController.m_Instance.CallGameOver();
+        }
+    }
+
 
     #region InputListeners
 

@@ -2051,7 +2051,7 @@ GameObject:
   - component: {fileID: 1187317286}
   m_Layer: 0
   m_Name: Botton
-  m_TagString: Bounds
+  m_TagString: BottomBound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2696,38 +2696,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 815737571, guid: b64aee77fe0c1a84d9db2c1dd5944cfa, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 878231890, guid: b64aee77fe0c1a84d9db2c1dd5944cfa, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 990789945, guid: b64aee77fe0c1a84d9db2c1dd5944cfa, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 990789945, guid: b64aee77fe0c1a84d9db2c1dd5944cfa, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 990789945, guid: b64aee77fe0c1a84d9db2c1dd5944cfa, type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2603384064704978339, guid: b64aee77fe0c1a84d9db2c1dd5944cfa, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2603384064704978339, guid: b64aee77fe0c1a84d9db2c1dd5944cfa, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2603384064704978339, guid: b64aee77fe0c1a84d9db2c1dd5944cfa, type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3636948927214640181, guid: b64aee77fe0c1a84d9db2c1dd5944cfa, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -2775,10 +2743,6 @@ PrefabInstance:
     - target: {fileID: 5591268416131375469, guid: b64aee77fe0c1a84d9db2c1dd5944cfa, type: 3}
       propertyPath: m_Name
       value: BG_Fundo
-      objectReference: {fileID: 0}
-    - target: {fileID: 5591268416131375469, guid: b64aee77fe0c1a84d9db2c1dd5944cfa, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b64aee77fe0c1a84d9db2c1dd5944cfa, type: 3}

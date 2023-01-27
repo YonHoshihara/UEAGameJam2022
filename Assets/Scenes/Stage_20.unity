@@ -2474,30 +2474,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 990789945, guid: b64aee77fe0c1a84d9db2c1dd5944cfa, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 990789945, guid: b64aee77fe0c1a84d9db2c1dd5944cfa, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 990789945, guid: b64aee77fe0c1a84d9db2c1dd5944cfa, type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2603384064704978339, guid: b64aee77fe0c1a84d9db2c1dd5944cfa, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2603384064704978339, guid: b64aee77fe0c1a84d9db2c1dd5944cfa, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2603384064704978339, guid: b64aee77fe0c1a84d9db2c1dd5944cfa, type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3636948927214640181, guid: b64aee77fe0c1a84d9db2c1dd5944cfa, type: 3}
       propertyPath: m_RootOrder
       value: 10
