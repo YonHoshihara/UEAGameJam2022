@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -55,6 +51,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnEnable()
     {
+        Debug.Log(SceneManager.GetActiveScene().name);
+        Debug.Log(ScoreManager.GetScore(SceneManager.GetActiveScene().name));
         m_Controls.Gameplay.Enable();
     }
 

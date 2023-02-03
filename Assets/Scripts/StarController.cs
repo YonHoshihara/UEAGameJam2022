@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StarController : MonoBehaviour
 {
@@ -24,16 +23,19 @@ public class StarController : MonoBehaviour
         if (foodCount == 0)
         {
             m_WinScreen.sprite = m_Starts[2];
+            ScoreManager.SaveScore(SceneManager.GetActiveScene().name,3);
         }
 
         if (foodCount == 1)
         {
             m_WinScreen.sprite = m_Starts[1];
+            ScoreManager.SaveScore(SceneManager.GetActiveScene().name,2);
         }
 
         if (foodCount == 2)
         {
             m_WinScreen.sprite = m_Starts[0];
+            ScoreManager.SaveScore(SceneManager.GetActiveScene().name,1);
         }
     }
 
