@@ -29,15 +29,23 @@ public class LevelSelectButtonController : MonoBehaviour
     private bool m_Locked;
 
     // Start is called before the first frame update
-    void Start()
+    public void SetLevelToLoad(string levelToLoad)
     {
-        LoadButtonState();
+        m_LevelToLoad = levelToLoad;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetStageNumber(string stageNumber)
     {
-        
+        m_StageNumber = stageNumber;
+    }
+
+    public void SetIsLocked(bool locked)
+    {
+        m_Locked = locked;
+    }
+    void Start()
+    {
+        //LoadButtonState();
     }
 
     public void LoadScene()
@@ -54,7 +62,7 @@ public class LevelSelectButtonController : MonoBehaviour
         SceneManager.LoadScene(m_LevelToLoad);
     }
 
-    private void LoadButtonState()
+    public void LoadButtonState()
     {
         
         if (m_Locked)
@@ -71,7 +79,7 @@ public class LevelSelectButtonController : MonoBehaviour
 
     private void LoadScoreNumber()
     {
-        int currentScore = ScoreManager.GetScore(m_LevelToLoad);
+        int currentScore = PlayerPrefsManager.GetScore(m_LevelToLoad);
         switch (currentScore)
         {
             case 0:

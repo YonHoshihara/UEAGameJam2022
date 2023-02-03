@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnEnable()
     {
         Debug.Log(SceneManager.GetActiveScene().name);
-        Debug.Log(ScoreManager.GetScore(SceneManager.GetActiveScene().name));
+        Debug.Log(PlayerPrefsManager.GetScore(SceneManager.GetActiveScene().name));
         m_Controls.Gameplay.Enable();
     }
 
