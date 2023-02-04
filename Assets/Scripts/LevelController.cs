@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using Unity.VisualScripting.InputSystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -32,15 +33,38 @@ public class LevelController : MonoBehaviour
 
     private bool m_GameOverStatus;
 
+    private int m_SceneIndexToLoad;
+    
+    private int m_SceneIndex;
+    
+    private string m_CurrentSceneName;
+    
     private void Start()
     {
         PlayerPrefs.SetInt(GameDefines.m_CurrentScenePlayerPref, SceneManager.GetActiveScene().buildIndex);
         m_Player = GameObject.FindGameObjectWithTag(GameDefines.m_PlayerTag);
         m_GameOverStatus = false;
+        m_SceneIndex = SceneManager.GetActiveScene().buildIndex;
+        m_CurrentSceneName = SceneManager.GetActiveScene().name;
         m_TimeController.StartCount();
         EventManager.StartMeteorMovementTrigger();
     }
 
+    private void UnlockNextLevel()
+    {
+        if (m_CurrentSceneName.Contains("Stage"))
+        {
+            m_SceneIndexToLoad = m_SceneIndex + 1;
+            string pathToScene = SceneUtility.GetScenePathByBuildIndex(m_SceneIndexToLoad);
+            string sceneName = System.IO.Path.GetFileNameWithoutExtension(pathToScene);
+           
+            if (pathToScene != null)
+            {
+                PlayerPrefsManager.UnlockStage(sceneName);
+            }
+        }
+       
+    }
     public void CallGameOver()
     {
         EventManager.PlaySoundTrigger(GameDefines.Sounds.Lose); 
@@ -53,6 +77,7 @@ public class LevelController : MonoBehaviour
     public void CallWinScreen()
     {
         m_Player.SetActive(false);
+        UnlockNextLevel();
         StartCoroutine(CallScreen());
     }
 

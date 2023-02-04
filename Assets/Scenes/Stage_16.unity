@@ -2935,10 +2935,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1822867320638370382, guid: e365f4425ff6a774ba7c0fc1cde773ec, type: 3}
-      propertyPath: m_SceneToLoad
-      value: Stage_17
-      objectReference: {fileID: 0}
     - target: {fileID: 5514104243668404618, guid: e365f4425ff6a774ba7c0fc1cde773ec, type: 3}
       propertyPath: m_SceneToLoad
       value: Stage_1

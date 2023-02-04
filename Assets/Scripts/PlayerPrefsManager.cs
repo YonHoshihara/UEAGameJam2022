@@ -24,7 +24,7 @@ public class PlayerPrefsManager : MonoBehaviour
     
     public static void UnlockStage(string sceneName)
     {
-       PlayerPrefs.SetInt(sceneName + "LockStatus",1);
+        PlayerPrefs.SetInt(sceneName + "LockStatus",1);
     }
 
     public static bool GetStageLockStatus(string sceneName)

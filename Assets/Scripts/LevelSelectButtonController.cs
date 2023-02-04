@@ -43,11 +43,6 @@ public class LevelSelectButtonController : MonoBehaviour
     {
         m_Locked = locked;
     }
-    void Start()
-    {
-        //LoadButtonState();
-    }
-
     public void LoadScene()
     {
         if (!m_Locked)

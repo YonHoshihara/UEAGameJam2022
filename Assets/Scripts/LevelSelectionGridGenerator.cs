@@ -5,11 +5,6 @@ using UnityEngine;
 
 public class LevelSelectionGridGenerator : MonoBehaviour
 {
-    public class ButtonConfig: MonoBehaviour
-    {
-        public int LevelNumber;
-        public string LevelName;
-    }
     
     [SerializeField] 
     private GameObject m_ButtonModel;
@@ -38,7 +33,7 @@ public class LevelSelectionGridGenerator : MonoBehaviour
             GameObject currentButton = Instantiate(m_ButtonModel);
             LevelSelectButtonController currentButtonController =
                 currentButton.GetComponent<LevelSelectButtonController>();
-            currentButtonController.SetIsLocked(false);
+            currentButtonController.SetIsLocked(lockedStatus);
             currentButtonController.SetStageNumber(stageNumber);
             currentButtonController.SetLevelToLoad(stageName);
             currentButton.transform.parent = m_Grid.transform;
