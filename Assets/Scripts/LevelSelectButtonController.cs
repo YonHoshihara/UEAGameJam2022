@@ -54,6 +54,7 @@ public class LevelSelectButtonController : MonoBehaviour
     private IEnumerator CallLoadScene()
     {
         yield return null;
+        EventManager.PlaySoundTrigger(GameDefines.Sounds.PressButton);
         SceneManager.LoadScene(m_LevelToLoad);
     }
 

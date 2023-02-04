@@ -18,12 +18,16 @@ public class LevelSelectionGridGenerator : MonoBehaviour
     [SerializeField] 
     private GameObject m_Grid;
 
-    private void Start()
-    {
-        GenerateMenu();
-    }
 
-    private void GenerateMenu()
+    public void ClearScreen()
+    {
+        int childCount = gameObject.transform.childCount;
+        
+        for (int i = childCount - 1; i >= 0; i--) {
+            DestroyImmediate(gameObject.transform.GetChild(i).gameObject);
+        }
+    }
+    public void GenerateMenu()
     {
         for (int i = m_LevelToStart; i<= m_LevelToEnd; i++)
         {
@@ -41,4 +45,23 @@ public class LevelSelectionGridGenerator : MonoBehaviour
         }
     }
 
+    public void SetLevelStart(int levelStart)
+    {
+        m_LevelToStart = levelStart;
+    }
+
+    public void SetLevelEnd(int levelEnd)
+    {
+        m_LevelToEnd = levelEnd;
+    }
+
+    public int GetLevelEnd()
+    {
+        return m_LevelToEnd;
+    }
+
+    public int GetLevelStart()
+    {
+        return m_LevelToStart;
+    }
 }

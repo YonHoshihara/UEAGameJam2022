@@ -24,6 +24,14 @@ public class EventManager : MonoBehaviour
     public delegate void StartMeteorMovement();
 
     public static event StartMeteorMovement startMeteorMovement;
+    
+    public delegate void CallNextLevelMenuPage();
+
+    public static event CallNextLevelMenuPage callNextLevelMenuPage ;
+    
+    public delegate void CallLatestLevelMenuPage();
+
+    public static event CallLatestLevelMenuPage callLatestLevelMenuPage ;
 
     
     #region Triggers
@@ -65,6 +73,22 @@ public class EventManager : MonoBehaviour
         if (startMeteorMovement != null)
         {
             startMeteorMovement();
+        }
+    }
+
+    public static void CallNextLevelMenuPageTrigger()
+    {
+        if (callNextLevelMenuPage != null)
+        {
+            callNextLevelMenuPage();
+        }
+    }
+    
+    public static void CallLatestLevelMenuPageTrigger()
+    {
+        if (callLatestLevelMenuPage != null)
+        {
+            callLatestLevelMenuPage();
         }
     }
 
