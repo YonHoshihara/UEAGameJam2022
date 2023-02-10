@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class LevelSelectionGridGenerator : MonoBehaviour
 {
@@ -43,6 +44,9 @@ public class LevelSelectionGridGenerator : MonoBehaviour
             currentButton.transform.parent = m_Grid.transform;
             currentButtonController.LoadButtonState();
         }
+
+        GameObject buttonToStart = m_Grid.gameObject.transform.GetChild(0).gameObject;
+        EventSystem.current.SetSelectedGameObject(buttonToStart);
     }
 
     public void SetLevelStart(int levelStart)

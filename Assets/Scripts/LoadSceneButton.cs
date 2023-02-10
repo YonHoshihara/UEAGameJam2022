@@ -70,4 +70,9 @@ public class LoadSceneButton : MonoBehaviour
         }
 
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
