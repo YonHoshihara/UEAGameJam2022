@@ -19,7 +19,7 @@ public class LoadSceneButton : MonoBehaviour
     [SerializeField] 
     private int m_MaxLevels;
     
-    private void Start()
+    private void OnEnable()
     {
         m_SceneName = SceneManager.GetActiveScene().name;
         m_SceneIndex = SceneManager.GetActiveScene().buildIndex;
@@ -81,7 +81,8 @@ public class LoadSceneButton : MonoBehaviour
 
     public void ResetAllPLayerPrefs()
     {
-        for (int i = 1; i <= m_MaxLevels; i++)
+        PlayerPrefsManager.ResetScore("Stage_1");
+        for (int i = 2; i <= m_MaxLevels; i++)
         {
             string stageNumber = i.ToString();
             string stageName = "Stage_" + i.ToString();
