@@ -15,6 +15,9 @@ public class LoadSceneButton : MonoBehaviour
     private string m_SceneName;
 
     private int m_SceneIndex;
+
+    [SerializeField] 
+    private int m_MaxLevels;
     
     private void Start()
     {
@@ -74,5 +77,16 @@ public class LoadSceneButton : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void ResetAllPLayerPrefs()
+    {
+        for (int i = 1; i <= m_MaxLevels; i++)
+        {
+            string stageNumber = i.ToString();
+            string stageName = "Stage_" + i.ToString();
+            PlayerPrefsManager.SaveScore(stageName,0);
+            PlayerPrefsManager.ResetScore(stageName);
+        }
     }
 }

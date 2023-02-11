@@ -323,6 +323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SceneToLoad: LevelSelection
   m_SceneIndexToLoad: 0
+  m_MaxLevels: 0
 --- !u!1 &1166243310432249455
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,8 +551,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b3f3ea4d2cb3f4190467d72b9748ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SceneToLoad: 
+  m_SceneToLoad: Stage_1
   m_SceneIndexToLoad: 0
+  m_MaxLevels: 0
 --- !u!1 &1971482759171904768
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,6 +801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SceneToLoad: MainMenu
   m_SceneIndexToLoad: 0
+  m_MaxLevels: 0
 --- !u!1 &2272017728698698056
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,6 +951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SceneToLoad: 
   m_SceneIndexToLoad: 0
+  m_MaxLevels: 0
 --- !u!1 &2583545790702952444
 GameObject:
   m_ObjectHideFlags: 0
@@ -1443,6 +1447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SceneToLoad: LevelSelection
   m_SceneIndexToLoad: 0
+  m_MaxLevels: 0
 --- !u!1 &3892688690342401390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1960,6 +1965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SceneToLoad: 
   m_SceneIndexToLoad: 0
+  m_MaxLevels: 0
 --- !u!1 &4987844168492181804
 GameObject:
   m_ObjectHideFlags: 0
@@ -2979,6 +2985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SceneToLoad: MainMenu
   m_SceneIndexToLoad: 0
+  m_MaxLevels: 0
 --- !u!1 &8844863559975527132
 GameObject:
   m_ObjectHideFlags: 0

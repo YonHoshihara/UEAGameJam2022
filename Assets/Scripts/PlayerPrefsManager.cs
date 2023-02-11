@@ -14,6 +14,11 @@ public class PlayerPrefsManager : MonoBehaviour
             PlayerPrefs.SetInt(sceneName + "Score", value);
         }
     }
+
+    public static void ResetScore(string sceneName)
+    {
+        PlayerPrefs.SetInt(sceneName + "Score", 0);
+    }
     
     public static int GetScore(string sceneName)
     {
@@ -25,6 +30,11 @@ public class PlayerPrefsManager : MonoBehaviour
     public static void UnlockStage(string sceneName)
     {
         PlayerPrefs.SetInt(sceneName + "LockStatus",1);
+    }
+    
+    public static void LockStage(string sceneName)
+    {
+        PlayerPrefs.SetInt(sceneName + "LockStatus",0);
     }
 
     public static bool GetStageLockStatus(string sceneName)

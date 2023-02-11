@@ -35,6 +35,7 @@ public class LevelSelectButtonController : MonoBehaviour
     public void SetLevelToLoad(string levelToLoad)
     {
         m_LevelToLoad = levelToLoad;
+        Debug.Log(m_LevelToLoad);
     }
 
     public void SetStageNumber(string stageNumber)
@@ -78,7 +79,7 @@ public class LevelSelectButtonController : MonoBehaviour
 
     private void LoadScoreNumber()
     {
-        int currentScore = PlayerPrefsManager.GetScore(m_LevelToLoad);
+        int currentScore = PlayerPrefsManager.GetScore(m_LevelToLoad); ;
         switch (currentScore)
         {
             case 0:
