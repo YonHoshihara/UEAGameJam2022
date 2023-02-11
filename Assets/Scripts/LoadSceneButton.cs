@@ -85,7 +85,7 @@ public class LoadSceneButton : MonoBehaviour
         {
             string stageNumber = i.ToString();
             string stageName = "Stage_" + i.ToString();
-            PlayerPrefsManager.SaveScore(stageName,0);
+            PlayerPrefsManager.LockStage(stageName);
             PlayerPrefsManager.ResetScore(stageName);
         }
     }
