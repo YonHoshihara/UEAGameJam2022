@@ -44,9 +44,16 @@ public class LevelSelectionGridGenerator : MonoBehaviour
             currentButton.transform.parent = m_Grid.transform;
             currentButtonController.LoadButtonState();
         }
+        
+        
+        foreach (LevelSelectButtonController child in m_Grid.transform.GetComponentsInChildren<LevelSelectButtonController>())
+        {
+            child.GetComponent<RectTransform>().localScale = Vector3.one;
+        }
 
         GameObject buttonToStart = m_Grid.gameObject.transform.GetChild(0).gameObject;
         EventSystem.current.SetSelectedGameObject(buttonToStart);
+        
     }
 
     public void SetLevelStart(int levelStart)

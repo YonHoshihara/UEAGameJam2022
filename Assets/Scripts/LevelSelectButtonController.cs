@@ -35,7 +35,6 @@ public class LevelSelectButtonController : MonoBehaviour
     public void SetLevelToLoad(string levelToLoad)
     {
         m_LevelToLoad = levelToLoad;
-        Debug.Log(m_LevelToLoad);
     }
 
     public void SetStageNumber(string stageNumber)
