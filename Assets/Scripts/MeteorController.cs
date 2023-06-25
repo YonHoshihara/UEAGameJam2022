@@ -2,35 +2,21 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class MeteorController : MonoBehaviour
 {
     [SerializeField] 
-    private float m_Time;
+    private Vector3 m_MeteorVelocity;
 
     [SerializeField] 
-    private Vector3 m_EndDistance;
-
-    [SerializeField] 
-    private iTween.EaseType m_AnimationCurve;
+    private Rigidbody2D m_Rb;
 
     private Hashtable m_Hashtable;
 
-    private void Awake()
+    private void Start()
     {
-        EventManager.startMeteorMovement += MoveMeteor;
-        m_Hashtable = new Hashtable();
-        m_Hashtable.Add("position", m_EndDistance);
-        m_Hashtable.Add("speed", m_Time);
+        m_Rb.velocity = m_MeteorVelocity * Random.Range(1,2);
     }
     
-    public void MoveMeteor()
-    {
-        iTween.MoveTo(gameObject, m_Hashtable);
-    }
-
-    private void OnDestroy()
-    {
-        EventManager.startMeteorMovement -= MoveMeteor;
-    }
 }
