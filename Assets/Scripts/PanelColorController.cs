@@ -10,7 +10,7 @@ public class PanelColorController : MonoBehaviour
    private Image m_Image;
    
    [SerializeField] 
-   private Color m_FinalColor;
+   private ColorVariable m_FinalColor;
    
    [SerializeField] 
    private float m_Time;
@@ -26,6 +26,6 @@ public class PanelColorController : MonoBehaviour
 
    private void ChangeColor()
    {
-      LeanTween.color(m_Image.rectTransform, m_FinalColor, m_Time);
+      LeanTween.color(m_Image.rectTransform, m_FinalColor.m_Value, m_Time);
    }
 }
