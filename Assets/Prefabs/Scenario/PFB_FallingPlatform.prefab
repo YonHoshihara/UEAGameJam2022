@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2781987359423784822}
   - component: {fileID: 9062678641339706477}
   - component: {fileID: 4878326849569094371}
+  - component: {fileID: 6099882248460551059}
   m_Layer: 6
   m_Name: PFB_FallingPlatform
   m_TagString: FallingPlatform
@@ -121,10 +122,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0840f1b0f95cb4409d15a60b2be0c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TimeToFall: 1
+  m_TimeToFall: 1.5
   m_RigidyBody: {fileID: 6583841502576135011}
   m_TargetJoint: {fileID: 9062678641339706477}
   m_BoxCollider2D: {fileID: 4878326849569094371}
+  m_Animator: {fileID: 6099882248460551059}
 --- !u!257 &9062678641339706477
 TargetJoint2D:
   m_ObjectHideFlags: 0
@@ -139,7 +141,7 @@ TargetJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_Anchor: {x: 0, y: 0}
-  m_Target: {x: -2.6158009, y: 0.858}
+  m_Target: {x: -0.20000005, y: 2.0500002}
   m_AutoConfigureTarget: 1
   m_MaxForce: 10000
   m_DampingRatio: 1
@@ -170,3 +172,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5878472, y: 0.18419266}
   m_EdgeRadius: 0
+--- !u!95 &6099882248460551059
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6583841502576134943}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d375cd3cd77a193408278cda2e16c17c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

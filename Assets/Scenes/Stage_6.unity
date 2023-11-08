@@ -130,21 +130,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2781987359423784822, guid: 5216681640c2e4948bea05f9705f5959, type: 3}
-      propertyPath: m_TimeToFall
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 6583841502576134941, guid: 5216681640c2e4948bea05f9705f5959, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6583841502576134941, guid: 5216681640c2e4948bea05f9705f5959, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.2
+      value: -0.20000005
       objectReference: {fileID: 0}
     - target: {fileID: 6583841502576134941, guid: 5216681640c2e4948bea05f9705f5959, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.05
+      value: 2.0500002
       objectReference: {fileID: 0}
     - target: {fileID: 6583841502576134941, guid: 5216681640c2e4948bea05f9705f5959, type: 3}
       propertyPath: m_LocalPosition.z
@@ -156,15 +152,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6583841502576134941, guid: 5216681640c2e4948bea05f9705f5959, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6583841502576134941, guid: 5216681640c2e4948bea05f9705f5959, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6583841502576134941, guid: 5216681640c2e4948bea05f9705f5959, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6583841502576134941, guid: 5216681640c2e4948bea05f9705f5959, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -181,14 +177,6 @@ PrefabInstance:
     - target: {fileID: 6583841502576134943, guid: 5216681640c2e4948bea05f9705f5959, type: 3}
       propertyPath: m_Name
       value: PFB_FallingPlatform
-      objectReference: {fileID: 0}
-    - target: {fileID: 9062678641339706477, guid: 5216681640c2e4948bea05f9705f5959, type: 3}
-      propertyPath: m_Target.x
-      value: -0.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 9062678641339706477, guid: 5216681640c2e4948bea05f9705f5959, type: 3}
-      propertyPath: m_Target.y
-      value: 2.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5216681640c2e4948bea05f9705f5959, type: 3}
