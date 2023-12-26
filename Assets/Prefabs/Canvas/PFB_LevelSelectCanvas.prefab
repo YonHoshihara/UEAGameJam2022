@@ -706,18 +706,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9059542791400782129}
     m_Modifications:
-    - target: {fileID: 1717508340, guid: 2d0d038910b17c5498ef67fd63a186c7, type: 3}
-      propertyPath: m_MaxLevel
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1717508340, guid: 2d0d038910b17c5498ef67fd63a186c7, type: 3}
-      propertyPath: m_BackButton
-      value: 
-      objectReference: {fileID: 779757421}
-    - target: {fileID: 1717508340, guid: 2d0d038910b17c5498ef67fd63a186c7, type: 3}
-      propertyPath: m_NextButton
-      value: 
-      objectReference: {fileID: 1186090368}
     - target: {fileID: 4272287921956830466, guid: 2d0d038910b17c5498ef67fd63a186c7, type: 3}
       propertyPath: m_Name
       value: PFB_LevelSelectionGrid
@@ -806,6 +794,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4272287921956830471, guid: 2d0d038910b17c5498ef67fd63a186c7, type: 3}
+      propertyPath: m_BackButton
+      value: 
+      objectReference: {fileID: 779757421}
+    - target: {fileID: 4272287921956830471, guid: 2d0d038910b17c5498ef67fd63a186c7, type: 3}
+      propertyPath: m_NextButton
+      value: 
+      objectReference: {fileID: 1186090368}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d0d038910b17c5498ef67fd63a186c7, type: 3}
 --- !u!224 &9059542790393076863 stripped

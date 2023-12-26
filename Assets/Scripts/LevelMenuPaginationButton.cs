@@ -13,6 +13,7 @@ public class LevelMenuPaginationButton : MonoBehaviour
     
     public void CallLatestPage()
     {
+        Debug.Log("Call Latest Page");
         EventManager.PlaySoundTrigger(GameDefines.Sounds.PressButton);
         EventManager.CallLatestLevelMenuPageTrigger();
     }
