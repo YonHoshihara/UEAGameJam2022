@@ -15,7 +15,6 @@ public class LevelSelectionGridGenerator : MonoBehaviour
     [SerializeField]
     private int m_PaginationNumber;
 
-
     [SerializeField] 
     private int m_LevelToStart;
     
