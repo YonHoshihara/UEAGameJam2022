@@ -76,3 +76,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TimeText: {fileID: 0}
   m_LevelTime: 10
+  m_GameCurrentTime: {fileID: 11400000, guid: d83c4e7aeb75a1246ae14704a18f4ef6, type: 2}
