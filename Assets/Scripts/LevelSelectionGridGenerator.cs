@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEditor;
-
+using UnityEngine.SceneManagement;
 
 public class LevelSelectionGridGenerator : MonoBehaviour
 {
@@ -34,8 +34,6 @@ public class LevelSelectionGridGenerator : MonoBehaviour
 
     private int m_MaxCalculatedLevel;
 
-    private EditorBuildSettingsScene[] m_ScenesInBuildSettings;
-
     private void Start()
     {
         m_ScenesNameList = new List<string>();
@@ -46,14 +44,15 @@ public class LevelSelectionGridGenerator : MonoBehaviour
     }
 
     private void ListLevelGameScenes()
-    {
-        m_ScenesInBuildSettings = EditorBuildSettings.scenes;
-        
-        foreach (var scene in m_ScenesInBuildSettings)
+    { 
+        int sceneCount = SceneManager.sceneCountInBuildSettings;
+    
+        for (int i = 0; i < sceneCount; i++)
         {
-            if (scene.path.Contains("Stage"))
+            string scene = SceneUtility.GetScenePathByBuildIndex(i);
+            if (scene.Contains("Stage"))
             {
-                m_ScenesNameList.Add(scene.path);
+                m_ScenesNameList.Add(scene);
             }
         }
         m_MaxLevel = m_ScenesNameList.Count;
