@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEditor;
+
 
 public class LevelSelectionGridGenerator : MonoBehaviour
 {
@@ -11,14 +13,51 @@ public class LevelSelectionGridGenerator : MonoBehaviour
     private GameObject m_ButtonModel;
 
     [SerializeField] 
+    private GameObject m_Grid;
+ 
+    [SerializeField]
+    private GameObject m_NextButton;
+
+    [SerializeField]
+    private GameObject m_BackButton;
+
+    [SerializeField]
+    private int m_PageElementsNumber;
+
+    private List<string> m_ScenesNameList;
+
     private int m_LevelToStart;
-    
-    [SerializeField] 
+
     private int m_LevelToEnd;
 
-    [SerializeField] 
-    private GameObject m_Grid;
+    private int m_MaxLevel;
 
+    private int m_MaxCalculatedLevel;
+
+    private EditorBuildSettingsScene[] m_ScenesInBuildSettings;
+
+    private void Start()
+    {
+        m_ScenesNameList = new List<string>();
+        ListLevelGameScenes();
+        m_LevelToStart = 1;
+        m_LevelToEnd = m_PageElementsNumber;
+        UpdatePagination();
+    }
+
+    private void ListLevelGameScenes()
+    {
+        m_ScenesInBuildSettings = EditorBuildSettings.scenes;
+        
+        foreach (var scene in m_ScenesInBuildSettings)
+        {
+            if (scene.path.Contains("Stage"))
+            {
+                m_ScenesNameList.Add(scene.path);
+            }
+        }
+        m_MaxLevel = m_ScenesNameList.Count;
+    }
 
     public void ClearScreen()
     {
@@ -28,8 +67,10 @@ public class LevelSelectionGridGenerator : MonoBehaviour
             DestroyImmediate(gameObject.transform.GetChild(i).gameObject);
         }
     }
+
     public void GenerateMenu()
     {
+        
         for (int i = m_LevelToStart; i<= m_LevelToEnd; i++)
         {
             string stageNumber = i.ToString();
@@ -41,7 +82,7 @@ public class LevelSelectionGridGenerator : MonoBehaviour
             currentButtonController.SetIsLocked(lockedStatus);
             currentButtonController.SetStageNumber(stageNumber);
             currentButtonController.SetLevelToLoad(stageName);
-            currentButton.transform.parent = m_Grid.transform;
+            currentButton.transform.SetParent(m_Grid.transform);
             currentButtonController.LoadButtonState();
         }
         
@@ -74,5 +115,87 @@ public class LevelSelectionGridGenerator : MonoBehaviour
     public int GetLevelStart()
     {
         return m_LevelToStart;
+    }
+
+    private void UpdatePagination()
+    {
+        if (GetLevelStart() == 1)
+        {
+            m_BackButton.SetActive(false);
+
+        }
+        else
+        {
+            m_BackButton.SetActive(true);
+        }
+
+        if (GetLevelEnd() == m_MaxLevel)
+        {
+            m_NextButton.SetActive(false);
+        }
+        else
+        {
+            m_NextButton.SetActive(true);
+        }
+
+       ClearScreen();
+       GenerateMenu();
+
+    }
+
+    public void GoToNextPage()
+    {
+
+        int currentStartLevel = GetLevelStart();
+        int currentEndLevel = GetLevelEnd();
+        int nextStartLevel = currentStartLevel + m_PageElementsNumber;
+        int nextEndLevel = currentEndLevel + m_PageElementsNumber;
+
+        if (nextEndLevel > m_MaxLevel)
+        {
+            m_MaxCalculatedLevel = nextEndLevel;
+            nextEndLevel = m_MaxLevel;
+            m_NextButton.gameObject.SetActive(false);
+        }
+
+        SetLevelStart(nextStartLevel);
+        SetLevelEnd(nextEndLevel);
+        UpdatePagination();
+    }
+
+    public void GoToLatestPage()
+    {
+        UpdatePagination();
+        int currentStartLevel = GetLevelStart();
+        int currentEndLevel = GetLevelEnd();
+        int nextStartLevel = currentStartLevel - m_PageElementsNumber;
+        int nextEndLevel = currentEndLevel - m_PageElementsNumber;
+
+        if (currentEndLevel == m_MaxLevel)
+        {
+            nextEndLevel = currentEndLevel - (m_MaxCalculatedLevel - m_MaxLevel);
+        }
+
+        if (nextStartLevel < 1)
+        {
+            nextStartLevel = 1;
+        }
+
+        SetLevelStart(nextStartLevel);
+        SetLevelEnd(nextEndLevel);
+        UpdatePagination();
+
+    }
+
+    private void OnEnable()
+    {
+        EventManager.callNextLevelMenuPage += GoToNextPage;
+        EventManager.callLatestLevelMenuPage += GoToLatestPage;
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.callNextLevelMenuPage -= GoToNextPage;
+        EventManager.callLatestLevelMenuPage -= GoToLatestPage;
     }
 }

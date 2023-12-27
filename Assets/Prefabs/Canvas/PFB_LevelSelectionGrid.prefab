@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4272287921956830469}
   - component: {fileID: 4272287921956830468}
   - component: {fileID: 4272287921956830471}
-  - component: {fileID: 1717508340}
   m_Layer: 5
   m_Name: PFB_LevelSelectionGrid
   m_TagString: Untagged
@@ -76,23 +75,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ButtonModel: {fileID: 2387162792271168800, guid: 939a9a996501b3c44a667e5c966bf27d, type: 3}
+  m_PaginationNumber: 0
   m_LevelToStart: 1
   m_LevelToEnd: 10
   m_Grid: {fileID: 4272287921956830466}
---- !u!114 &1717508340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4272287921956830466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d816adf0afe718e47ba358f64fe92e2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_ScenesNameList: []
   m_NextButton: {fileID: 0}
   m_BackButton: {fileID: 0}
   m_GridGenerator: {fileID: 4272287921956830471}
-  m_MaxLevel: 1
+  m_MaxLevel: 25
   m_PageElementsNumber: 10
