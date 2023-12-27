@@ -53,11 +53,9 @@ public class TreeWindReaction : MonoBehaviour
     private void UpdateWindEffect()
     {
 
-        float currentWindSpeed = Mathf.Abs(m_GameTime.m_Value - (10 - m_DelayToStartEffect)) / 2;
-        float currentWindIntensity = Mathf.Abs(m_GameTime.m_Value - (10 - m_DelayToStartEffect)) /( 2*(10 - m_DelayToStartEffect));
-
+        //float currentWindSpeed = Mathf.Abs(m_GameTime.m_Value - (10 - m_DelayToStartEffect)) / 2;
+        float currentWindIntensity = Mathf.Abs(m_GameTime.m_Value - (10 - m_DelayToStartEffect)) /( 3*(10 - m_DelayToStartEffect));
         // m_WindMaterial.SetFloat("_WindSpeed", currentWindSpeed);
-     
         m_WindMaterial.SetFloat("_WindIntensity", currentWindIntensity);
     }
 
