@@ -114,11 +114,13 @@ public class PlayerMovement : MonoBehaviour
     
     public void CallJump(float jumpforce, ForceMode2D forcemode)
     {
+        m_RigidBody.velocity = Vector2.zero;
         m_RigidBody.AddForce(new Vector2(0, jumpforce), forcemode);
     }
 
     public void CallsSpringJump(float jumpforce)
-    { m_Animator.SetTrigger("Jump");
+    { 
+        m_Animator.SetTrigger("Jump");
         EventManager.PlaySoundTrigger(GameDefines.Sounds.Jump);
         m_Animator.SetBool("Move", false);
         CallJump(jumpforce, ForceMode2D.Impulse);
@@ -134,7 +136,6 @@ public class PlayerMovement : MonoBehaviour
     {
         return m_MovementSpeed;
     }
-
 
     public bool GetIsJumpingStatus()
     {
