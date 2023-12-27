@@ -18,10 +18,14 @@ public class Spring : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals(GameDefines.m_PlayerTag) && !LevelController.m_Instance.GameOverStatus())
         {
-            m_Animator.SetTrigger(m_TrigerAnimation);
             PlayerMovement playerMovement = collision.gameObject.GetComponent<PlayerMovement>();
-            playerMovement.CallsSpringJump(m_JumpForce);
-            EventManager.PlaySoundTrigger(GameDefines.Sounds.Spring);
+
+            if(collision.relativeVelocity.normalized.y < 0 && playerMovement.GetIsJumpingStatus())
+            {
+                m_Animator.SetTrigger(m_TrigerAnimation);
+                playerMovement.CallsSpringJump(m_JumpForce);
+                EventManager.PlaySoundTrigger(GameDefines.Sounds.Spring);
+            }
         }
     }
 }
