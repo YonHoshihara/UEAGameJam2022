@@ -268,6 +268,7 @@ MonoBehaviour:
   m_GameTime: {fileID: 11400000, guid: d83c4e7aeb75a1246ae14704a18f4ef6, type: 2}
   m_WindMaterial: {fileID: 2100000, guid: 8fd12246adfcb2b4189c574f4e7334e0, type: 2}
   m_WindDirection: 0
+  m_DelayToStartEffect: 3
 --- !u!1 &5591268416131375469
 GameObject:
   m_ObjectHideFlags: 0

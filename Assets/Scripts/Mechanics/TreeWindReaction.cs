@@ -9,7 +9,6 @@ public class TreeWindReaction : MonoBehaviour
         LEFT,RIGHT
     }
     
-
     [SerializeField]
     private FloatVariable m_GameTime;
 
@@ -19,23 +18,46 @@ public class TreeWindReaction : MonoBehaviour
     [SerializeField]
     private WindDirection m_WindDirection;
 
+    [SerializeField]
+    private float m_DelayToStartEffect;
+    
+    private bool m_CanApplyEffect;
+
+
     private void Start()
     {
         ResetValues();
         SetWindDirection();
+        m_CanApplyEffect = false;
+        StartCoroutine(UpdateCanApplyEffect());
     }
 
     private void Update()
     {
+
+        if (!m_CanApplyEffect)
+        {
+            return;
+        }
+        
         UpdateWindEffect();
+        
+        
     }
 
+    private IEnumerator UpdateCanApplyEffect()
+    {
+        yield return new WaitForSeconds(m_DelayToStartEffect);
+        m_CanApplyEffect = true;
+    }
     private void UpdateWindEffect()
     {
-        float currentWindSpeed = Mathf.Abs(m_GameTime.m_Value - 10) / 2;
-        float currentWindIntensity = Mathf.Abs(m_GameTime.m_Value - 10) / 20;
 
-       // m_WindMaterial.SetFloat("_WindSpeed", currentWindSpeed);
+        float currentWindSpeed = Mathf.Abs(m_GameTime.m_Value - (10 - m_DelayToStartEffect)) / 2;
+        float currentWindIntensity = Mathf.Abs(m_GameTime.m_Value - (10 - m_DelayToStartEffect)) /( 2*(10 - m_DelayToStartEffect));
+
+        // m_WindMaterial.SetFloat("_WindSpeed", currentWindSpeed);
+     
         m_WindMaterial.SetFloat("_WindIntensity", currentWindIntensity);
     }
 
