@@ -14,13 +14,15 @@ public class Spring : MonoBehaviour
     [SerializeField]
     private string m_TrigerAnimation;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag.Equals(GameDefines.m_PlayerTag) && !LevelController.m_Instance.GameOverStatus())
         {
             PlayerMovement playerMovement = collision.gameObject.GetComponent<PlayerMovement>();
+            Rigidbody2D playerBody = collision.gameObject.GetComponent<Rigidbody2D>();
 
-            if(collision.relativeVelocity.normalized.y < 0 && playerMovement.GetIsJumpingStatus())
+            if(playerBody.velocity.normalized.y < 0 && playerMovement.GetIsJumpingStatus())
             {
                 m_Animator.SetTrigger(m_TrigerAnimation);
                 playerMovement.CallsSpringJump(m_JumpForce);
