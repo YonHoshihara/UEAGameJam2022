@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 636657996855775854}
   - component: {fileID: 636657996855775849}
+  - component: {fileID: 3766050298349621051}
   m_Layer: 0
   m_Name: Folha_Close
   m_TagString: Untagged
@@ -136,7 +137,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7e27c653b1ff7b34c97197362f084033, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -168,6 +169,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3766050298349621051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636657996855775848}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d3cba72da116d947a293fa0d677f7fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_GameTime: {fileID: 11400000, guid: d83c4e7aeb75a1246ae14704a18f4ef6, type: 2}
+  m_WindMaterial: {fileID: 2100000, guid: 7e27c653b1ff7b34c97197362f084033, type: 2}
+  m_WindDirection: 0
 --- !u!1 &636657997630830078
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,6 +194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 636657997630830076}
   - component: {fileID: 636657997630830079}
+  - component: {fileID: 9200194960203285051}
   m_Layer: 0
   m_Name: Mato_Close
   m_TagString: Untagged
@@ -220,7 +237,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f78c1dfd8e0fa1b4da6f597be223db53, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -252,6 +269,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &9200194960203285051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636657997630830078}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d3cba72da116d947a293fa0d677f7fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_GameTime: {fileID: 11400000, guid: d83c4e7aeb75a1246ae14704a18f4ef6, type: 2}
+  m_WindMaterial: {fileID: 2100000, guid: f78c1dfd8e0fa1b4da6f597be223db53, type: 2}
+  m_WindDirection: 0
 --- !u!1 &636657997822252495
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,6 +294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 636657997822252493}
   - component: {fileID: 636657997822252492}
+  - component: {fileID: 8949522622703068533}
   m_Layer: 0
   m_Name: Arbusto
   m_TagString: Untagged
@@ -304,7 +337,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d96bfc40ad1825f44bcc28dab17af919, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -336,6 +369,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8949522622703068533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636657997822252495}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d3cba72da116d947a293fa0d677f7fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_GameTime: {fileID: 11400000, guid: d83c4e7aeb75a1246ae14704a18f4ef6, type: 2}
+  m_WindMaterial: {fileID: 2100000, guid: d96bfc40ad1825f44bcc28dab17af919, type: 2}
+  m_WindDirection: 0
 --- !u!1 &636657997966084238
 GameObject:
   m_ObjectHideFlags: 0

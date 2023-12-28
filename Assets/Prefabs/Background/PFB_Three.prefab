@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1825478217286976855}
   - component: {fileID: 1825478217286976854}
+  - component: {fileID: 5977407234390346613}
   m_Layer: 0
   m_Name: PFB_Three
   m_TagString: Untagged
@@ -52,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 34791668c99269744a70e2c9bcfaf2bd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,3 +85,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5977407234390346613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825478217286976849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d3cba72da116d947a293fa0d677f7fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_GameTime: {fileID: 11400000, guid: d83c4e7aeb75a1246ae14704a18f4ef6, type: 2}
+  m_WindMaterial: {fileID: 2100000, guid: 34791668c99269744a70e2c9bcfaf2bd, type: 2}
+  m_WindDirection: 0
+  m_DelayToStartEffect: 3
