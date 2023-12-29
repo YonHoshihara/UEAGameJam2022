@@ -67,15 +67,19 @@ public class LevelController : MonoBehaviour
     }
     public void CallGameOver()
     {
+        if(m_GameOverStatus) return;
+
         EventManager.PlaySoundTrigger(GameDefines.Sounds.Lose); 
         m_Player.SetActive(false);
-       m_GameOverStatus = true;
-       m_TimeController.ResetCount();
-       EventManager.CallGameOverScreenTrigger();
+        m_GameOverStatus = true;
+        m_TimeController.ResetCount();
+        EventManager.CallGameOverScreenTrigger();
     }
 
     public void CallWinScreen()
     {
+        if(m_GameOverStatus) return;
+
         m_Player.SetActive(false);
         UnlockNextLevel();
         StartCoroutine(CallScreen());
