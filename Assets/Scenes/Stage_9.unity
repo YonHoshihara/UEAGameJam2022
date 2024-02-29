@@ -998,6 +998,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_SteamController
       objectReference: {fileID: 0}
+    - target: {fileID: 2437181641392215988, guid: 18b569153187b554fa3f3255337994bd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2437181641392215991, guid: 18b569153187b554fa3f3255337994bd, type: 3}
       propertyPath: m_RootOrder
       value: 22

@@ -2875,6 +2875,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_SteamController
       objectReference: {fileID: 0}
+    - target: {fileID: 2437181641392215988, guid: 18b569153187b554fa3f3255337994bd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2437181641392215991, guid: 18b569153187b554fa3f3255337994bd, type: 3}
       propertyPath: m_RootOrder
       value: 31
@@ -3470,7 +3474,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1486763115936102031, guid: e365f4425ff6a774ba7c0fc1cde773ec, type: 3}
       propertyPath: m_SceneToLoad
-      value: Stage_1
+      value: EndGame
       objectReference: {fileID: 0}
     - target: {fileID: 1822867320638370382, guid: e365f4425ff6a774ba7c0fc1cde773ec, type: 3}
       propertyPath: m_SceneToLoad

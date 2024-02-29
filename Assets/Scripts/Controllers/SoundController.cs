@@ -2,18 +2,28 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 [RequireComponent(typeof(AudioSource))]
 public class SoundController : MonoBehaviour
 {
     public static SoundController Instance;
     
-   
     [SerializeField]
     private AudioSource[] m_AudioSourceSFX;
     
     [SerializeField]
     private AudioClip [] m_AudioClips;
-    
+
+    [SerializeField]
+    private AudioClip m_MenuBGM;
+
+    [SerializeField]
+    private AudioClip m_SceneBGMAudio;
+
+    [SerializeField]
+    private AudioSource m_bgmAudioSource;
+
     void Awake()
     {
         if (Instance != null && Instance !=this)
@@ -28,7 +38,29 @@ public class SoundController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         EventManager.playSound += PlaySound;
     }
-    
+
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene().name.Contains("Stage"))
+        {
+            if (m_bgmAudioSource.clip != m_SceneBGMAudio)
+            {
+                m_bgmAudioSource.Stop();
+                m_bgmAudioSource.clip = m_SceneBGMAudio;
+                m_bgmAudioSource.Play();
+            }
+        }
+        else
+        {
+            if (m_bgmAudioSource.clip != m_MenuBGM)
+            {
+                m_bgmAudioSource.Stop();
+                m_bgmAudioSource.clip = m_MenuBGM;
+                m_bgmAudioSource.Play();
+            }
+        }
+    }
+        
     public void PlaySound(GameDefines.Sounds position)
     {
         switch (position)
